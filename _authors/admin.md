@@ -1,9 +1,9 @@
 ---
 username: admin
-name: Dann Kanigan
-image: '/images/01-1.jpg'
+name: Matt Slotten
+image: '/images/mattslotten_headshot.jpg'
 website: https://www.google.com
 twitter: https://twitter.com
 facebook: https://www.facebook.com
 ---
-Credibly reintermediate backend ideas for cross-platform models. Continually reintermediate integrated processes through technically sound intellectual capital. Holistically foster superior.
+Matt brings over 15 years of experience to his role as Principal Solutions Architect at Kasten. He has a background in cloud computing, DevSecOps, and IT infrastructure, including cloud infrastructure, virtualization, infrastructure-as-code (IaC), and web application development. Matt is passionate about learning, leveraging, and building open-source technology software projects both at work and in his free time.
