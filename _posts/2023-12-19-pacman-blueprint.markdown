@@ -116,7 +116,7 @@ actions:
 EOF
 
 ```
-[^1]: One thing to note, notice how we escape the dollar sign character in the above YAML. That's because we're applying the YAML directly from a BASH shell, and if we didn't do that, our local shell would be looking for a variable called `MONGODB_ROOT_PASSWORD` which probably doesn't exist on our local machine and if it did, it may not match what's actually configured in our K8s cluster. Ask me how I figured out this would case a problem...
+{% include note.html content="One thing to note, notice how we escape the dollar sign character in the above YAML. That's because we're applying the YAML directly from a BASH shell, and if we didn't do that, our local shell would be looking for a variable called `MONGODB_ROOT_PASSWORD` which probably doesn't exist on our local machine and if it did, it may not match what's actually configured in our K8s cluster. Take a wild guess how I found this quirk when applying directly via shell..." %}
 
 ![Kasten Blueprints UI](images/blogs/blueprints.png)
 
