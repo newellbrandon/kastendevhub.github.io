@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Application Consistent Kanister Blueprint Example
+title: Application Consistent Backups and Why They Matter for K8s
 description: In this blog post, we cover how to implement an application consistent blueprint for a bitnami MongoDB
 date: 2023-12-19 10:25:35 +0300
 author: admin
@@ -9,7 +9,7 @@ image_caption: 'Leverage Kanister Blueprints for Application Consistent Snapshot
 tags: [kanister, application consistent, backup, snapshot]
 featured:
 ---
-<p>
+
 At the risk of beating a dead horse, it needs to be said that **Snapshots are not Backups**.  Why do we so often
 hear this from backup vendors, infrastructure engineers, and solution architects? Is it because
 they're all trying to hawk their softwares at us? Do they think it makes them sound smarter or more worldly?
