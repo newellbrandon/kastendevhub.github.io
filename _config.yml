@@ -7,6 +7,9 @@ url: "https://veeamkasten.dev" # the base hostname & protocol for your site, e.g
 #-------------------------------
 # Build Settings
 markdown: kramdown
+kramdown:
+   parse_block_html: true 
+
 permalink: /:title
 plugins:
   - jekyll-paginate
