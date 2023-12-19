@@ -14,10 +14,10 @@ At the risk of beating a dead horse, it needs to be said that **Snapshots are no
 hear this from backup vendors, infrastructure engineers, and solution architects? Is it because
 they're all trying to hawk their softwares at us? Do they think it makes them sound smarter or more worldly?
 
-After all, I've screwed up a VM before and was able to successfully restore from a VMware snapshot, isn't that core function of a backup? What's really the difference? Any why would any of this matter for Kubernetes? What is the airpspeed velocity of an [unladen swallow](https://www.youtube.com/watch?v=uio1J2PKzLI)? All great questions! Let's address them in
+After all, I've screwed up a VM before and was able to successfully restore from a VMware snapshot, isn't that core function of a backup? What's really the difference? Anyway, why would any of this matter for Kubernetes? What is the airpspeed velocity of an [unladen swallow](https://www.youtube.com/watch?v=uio1J2PKzLI)? All great questions! Let's address them in
 this blog post and end with a practical example using a [Kanister](https://kanister.io) blueprint.
 
-- We often hear this from backup vendors, infrastructure engineers, and solution architects because they hemselves have been burned before by relying on snapshots for backup, not having a backup, or having what they thought was a backup but when they attempted to restore from it, found the end result to be a crashing application or corrupt data. Some also say it to sound smarter or more worldly.
+- We often hear this from backup vendors, infrastructure engineers, and solution architects because they themselves have been burned before by relying on snapshots for backup, not having a backup, or having what they thought was a backup but when they attempted to restore from it, found the end result to be a crashing application or corrupt data. Some also say it to sound smarter or more worldly.
 
 - VM or storage snapshots can be an effective way to restore quickly, particularly during infrastructure build or in dev/test situations, or even for some production workloads that write little or no data or we don't care about the actual data. But they're limited in their capabilities, can often cause performance issues (a topic for another day, but if you're interested, [here's another blog](https://virtunetsystems.com/why-do-snapshots-affect-vm-performance/) by a different author about how vSphere snapshots work), or when restored, applications may not be happy with the state of the data.  This is because snapshots (even "crash consistent" ones) often don't account for high R/W operations.  Depending on how the snapshot it taken, an application may be in the midst of writing a bunch of data to disk, and if that disk isn't temporarily "paused" (aka quiesced) prior to the snapshot, some data may get lost, corrupted, or turn into something else completely. Another key difference is snapshots are often not cataloged in the same way backups nor are they intended to be long-lived. So keeping a bunch of snapshots around may have unintended performance consequences.  And while we often heavily rely on storage subsystems to perform snapshots for us (Kasten loves a good compliant [CSI driver with VolumeSnapshot and Restore capabilities](https://kubernetes-csi.github.io/docs/api/volume-snapshot.html)), they often need to be used in conjunction with other application-aware or logical backup capabilities to ensure all data is captured safely, correctly, and is restorable. Obviously, your mileage may vary (YMMV) depending on what storage you're using and applications you're running, but these are some (not all) of the reasons why snapshots are not the same thing as backups.
 
@@ -56,7 +56,7 @@ Wow, 500000000, I'm pretty great at pacman! So good in fact, I want to backup my
 
 Pretty simple and easy! And for the most part, I'm in good shape. But what if lots of people are playing my pacman application simultaneously, in their naive, fruitless attempt to beat my incredible score and as a result, high scores are being written super frequently. The next time Kasten K10 performs a backup via snapshot, a score may be mid-write to the MongoDB, which means the write may start when the snapshot begins but doesn't finish writing before it finishes... that would be bad news. Remember the angry toddler?
 
-Fortunately Kasten has a capabilities to leverage a construct called [Kanister Blueprints](https://docs.kasten.io/latest/kanister/testing.html#installing-applications-and-blueprints), which provides a standardized way to perform more advanced operations for application consistent and logical backups.  This sounds scary, especially to an infrastructure guy, but fear not - there's tons of [examples and samples available](https://github.com/kanisterio/kanister/tree/master/examples) to get you started.
+Fortunately Kasten has the capability to leverage a construct called [Kanister Blueprints](https://docs.kasten.io/latest/kanister/testing.html#installing-applications-and-blueprints), which provides a standardized way to perform more advanced operations for application consistent and logical backups.  This sounds scary, especially to an infrastructure guy, but fear not - there's tons of [examples and samples available](https://github.com/kanisterio/kanister/tree/master/examples) to get you started.
 
 And the good news is our Pacman application leverages an underlying Bitnami instance of MongoDB, so we can simply modify that example blueprint for our purposes. The YAML is below and we won't run through what everything does, but there's a few important lines to note to understand what's going on:
 
@@ -116,7 +116,8 @@ actions:
 EOF
 
 ```
-{% include note.html content="One thing to note, notice how we escape the dollar sign character in the above YAML. That's because we're applying the YAML directly from a BASH shell, and if we didn't do that, our local shell would be looking for a variable called `MONGODB_ROOT_PASSWORD` which probably doesn't exist on our local machine and if it did, it may not match what's actually configured in our K8s cluster. Take a wild guess how I found this quirk when applying directly via shell..." %}
+{% include note.html content="Notice how we escape the dollar sign character in the above YAML. That's because we're applying the YAML directly from a BASH shell (see the `cat <<EOF | k -n kasten-io apply -f -` at the top of the file ), and if we didn't do that, our local shell would be looking for a variable called `MONGODB_ROOT_PASSWORD` which probably doesn't exist on our local machine and in the rare case that it did, it may not match what's actually configured in our K8s cluster. Take a wild guess how I found this quirk when applying directly via shell..." %}
+
 
 ![Kasten Blueprints UI](images/blogs/blueprints.png)
 
@@ -150,4 +151,4 @@ And we're good to go! Next time we perform a backup in Kasten K10, our blueprint
 
 ![Pacman Application Consistent Backup](images/blogs/pacmanbackup_appconsistent.png)
 
-To learn more, checkout our (interactive demos)[https://veeamkasten.dev/tags/?tag=demo] or [videos on YouTube](https://www.youtube.com/@KastenByVeeam)!
+To learn more, checkout our [interactive demos](https://veeamkasten.dev/tags/?tag=demo) or [videos on YouTube](https://www.youtube.com/@KastenByVeeam)!
