@@ -14,7 +14,7 @@ At the risk of beating a dead horse, it needs to be said that **Snapshots are no
 hear this from backup vendors, infrastructure engineers, and solution architects? Is it because
 they're all trying to hawk their softwares at us? Do they think it makes them sound smarter or more worldly?
 
-After all, I've screwed up a VM before and was able to successfully restore from a VMware snapshot, isn't that core function of a backup? What's really the difference? Any why would any of this matter for Kubernetes? All great questions! Let's address them in
+After all, I've screwed up a VM before and was able to successfully restore from a VMware snapshot, isn't that core function of a backup? What's really the difference? Any why would any of this matter for Kubernetes? What is the airpspeed velocity of an [unladen swallow](https://www.youtube.com/watch?v=uio1J2PKzLI)? All great questions! Let's address them in
 this blog post and end with a practical example using a [Kanister](https://kanister.io) blueprint.
 
 - We often hear this from backup vendors, infrastructure engineers, and solution architects because they hemselves have been burned before by relying on snapshots for backup, not having a backup, or having what they thought was a backup but when they attempted to restore from it, found the end result to be a crashing application or corrupt data. Some also say it to sound smarter or more worldly.
@@ -37,7 +37,7 @@ helm install pacman pacman/pacman -n pacman --create-namespace --set service.typ
 
 If all goes well, you should have pacman up and running in K8s in no time!
 
-![Pacman](images/blog/pacman.png)
+![Pacman](images/blogs/pacman.png)
 
 ```
 $ k get deploy -n pacman
@@ -48,13 +48,13 @@ pacman-mongodb   1/1     1            1           42d
 
 Note we have two deployments in the `pacman` namespace - `pacman` and `pacman-mongodb`. Let's play a quick game:
 
-![Pacman High Score](images/blog/pacmanhighscore.png)
+![Pacman High Score](images/blogs/pacmanhighscore.png)
 
 Wow, 500000000, I'm pretty great at pacman! So good in fact, I want to backup my score so if something happens, I can quickly recover it so I can brag next time I'm at a bar or there's an attractive person within earshot. Let's do so in the Kasten UI, at first just using the default Storage snapshot capabilities of our cluster's storage:
 
-![Backup Kasten Storage Snapshot](images/blog/pacmanbackuppolicy.png)
+![Backup Kasten Storage Snapshot](images/blogs/pacmanbackuppolicy.png)
 
-Pretty simple and easy! And for the most part, I'm in good shape. But what if lots of people are playing my pacman application simultaneously, in their naive attempt to beat my incredible score and as a result, high scores are being written super frequently. The next time Kasten K10 performs a backup via snapshot, a score may be mid-write to the MongoDB, which means the write may start when the snapshot begins but doesn't finish writing before it finishes... that would be bad news. Remember the angry toddler?
+Pretty simple and easy! And for the most part, I'm in good shape. But what if lots of people are playing my pacman application simultaneously, in their naive, fruitless attempt to beat my incredible score and as a result, high scores are being written super frequently. The next time Kasten K10 performs a backup via snapshot, a score may be mid-write to the MongoDB, which means the write may start when the snapshot begins but doesn't finish writing before it finishes... that would be bad news. Remember the angry toddler?
 
 Fortunately Kasten has a capabilities to leverage a construct called [Kanister Blueprints](https://docs.kasten.io/latest/kanister/testing.html#installing-applications-and-blueprints), which provides a standardized way to perform more advanced operations for application consistent and logical backups.  This sounds scary, especially to an infrastructure guy, but fear not - there's tons of [examples and samples available](https://github.com/kanisterio/kanister/tree/master/examples) to get you started.
 
@@ -118,7 +118,7 @@ EOF
 ```
 [^1]: One thing to note, notice how we escape the dollar sign character in the above YAML. That's because we're applying the YAML directly from a BASH shell, and if we didn't do that, our local shell would be looking for a variable called `MONGODB_ROOT_PASSWORD` which probably doesn't exist on our local machine and if it did, it may not match what's actually configured in our K8s cluster. Ask me how I figured out this would case a problem...
 
-![Kasten Blueprints UI](images/blog/blueprints.png)
+![Kasten Blueprints UI](images/blogs/blueprints.png)
 
 Note how we define a `backupPreHook` and `backupPostHook` section in the blueprint, which are operations we're telling Kanister (and subsequently Kasten) to do before and after taking a snapshot.  Then note further down in our `command` subsection for each:
 
@@ -148,6 +148,6 @@ kubectl annotate deployment pacman-mongodb kanister.kasten.io/blueprint='mongo-h
 
 And we're good to go! Next time we perform a backup in Kasten K10, our blueprint will run, which will pause database operations, perform a storage snapshot, and resume database operations, and as a result, we'll have a happy ~~toddler~~ application on our hands!
 
-![Pacman Application Consistent Backup](images/blog/pacmanbackup_appconsistent.png)
+![Pacman Application Consistent Backup](images/blogs/pacmanbackup_appconsistent.png)
 
 To learn more, checkout our (interactive demos)[https://veeamkasten.dev/tags/?tag=demo] or [videos on YouTube](https://www.youtube.com/@KastenByVeeam)!
