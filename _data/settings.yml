@@ -1,16 +1,16 @@
 #-------------------------------
 # Site Settings
 title: Veeam Kasten DevHub
-logo: "/images/logo-kasten.png"
+logo: "/images/logo-kastendevhub.png"
 description: Veeam Kasten DevHub
 
 
 #-------------------------------
 # Author Global Settings
 author:
-  author__name: Matt Slotten
-  author__bio: Matt brings over 15 years of experience to his role as Principal Solutions Architect at Kasten. He has a background in cloud computing, DevSecOps, and IT infrastructure, including cloud infrastructure, virtualization, infrastructure-as-code (IaC), and web application development. Matt is passionate about learning, leveraging, and building open-source technology software projects both at work and in his free time.
-  author__avatar: /images/mattslotten_headshot.jpg
+  author__name: Kasten
+  author__bio: Purpose-built for Kubernetes, the Kasten K10 data management platform provides enterprise operations teams an easy-to-use, scalable and secure system for backup/restore, disaster recovery and application mobility of Kubernetes applications.
+  author__avatar: /images/kastenk10.jpg
 
 
 #-------------------------------
@@ -21,12 +21,8 @@ menu__settings:
       url: '/'
     - title: 'About'
       url: '/about/'
-    - title: 'Pages'
-      submenu:
-      - url: '/authors/'
-        title: 'Authors'
-      - url: '/elements/'
-        title: 'Elements'
+    - title: 'Authors'
+      url: '/authors/'
     - title: 'Contact'
       url: '/contact/'
 
@@ -78,9 +74,6 @@ footer__menu__settings:
       url: '/contact/'
     - title: 'Authors'
       url: '/authors/'
-    - title: 'Elements'
-      url: '/elements/'
-
 
 # Social Links
 social:
