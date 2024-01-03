@@ -10,6 +10,11 @@ tags: [openshift, authentication, oauth, multicluster]
 featured:
 ---
 
+**TLDR;**
+For those of you who prefer to consume content via YouTube, here's a video outlining the steps below (starting at the K10 OAuth config portion):
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wuSZdGAUutY?si=IE8qP7D673OacHE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 I've always considered security a necessary evil in my line of work - we could do so many cool things, use that super slick new feature, or solve world hunger if only the InfoSec/AppSec/SecOps/etc team didn't get in the way. Okay, okay, maybe I'm being a bit hyperbolic... and maybe even a bit hypocritical having previously worked for an AppSec company. But hey, click-bait sells.
 
 The truth of the matter is we really do need security in our infrastructure, applications, and clouds, now more than ever. While emergent and improving technologies like Kubernetes, IaC, RESTful APIs, and generative AI make our lives as IT engineers, DevOps, PlatformOps, or CloudOps easier, so do they for threat actors, or "hackers" (such an overused term - insert a heavily photoshopped dude in a black hoodie here, with some green HTML behind him to add credibility). Just as normal "civilians" are beginning to learn and use automation and AI more in their daily lives, you can bet so too are the script kiddies, LulzSec (or the equivalent collectives today), and foreign government-sponsored cyber intelligence units, and they're miles ahead in their sophisitication and use of these tools.
@@ -203,6 +208,3 @@ $ oc create clusterrolebinding k10-admin-kastendemo --clusterrole=k10-admin --us
 ```
 " %}
 
-For those of you who prefer to consume content via YouTube, here's a video outlining the steps above (starting at the K10 OAuth config portion):
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wuSZdGAUutY?si=IE8qP7D673OacHE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
