@@ -62,34 +62,34 @@ $ oc create secret generic openid-okta-secret --from-literal=clientSecret=ZTpkAi
 ```
 2. Update the OAuth object in OpenShift to add Okta as an identity provider
 ```
-$ cat <<EOF | kubectl apply -f - 
-apiVersion: config.openshift.io/v1
-kind: OAuth
-metadata:
-name: cluster
-spec:
-identityProviders:
-    - mappingMethod: claim
-    name: okta
-    openID:
-        claims:
-        email:
-        - email
-        name:
-        - name
-        - email
-        preferredUsername:
-        - preferred_username
-        - email
-        clientID: tQovYscUrhELIpumMxQR
-        clientSecret:
-        name: openid-okta-secret
-        extraScopes:
-        - email
-        - profile
-        issuer: https://dev-12345678.okta.com                       
-    type: OpenID
-EOF
+    $ cat <<EOF | kubectl apply -f - 
+    apiVersion: config.openshift.io/v1
+    kind: OAuth
+    metadata:
+    name: cluster
+    spec:
+    identityProviders:
+        - mappingMethod: claim
+        name: okta
+        openID:
+            claims:
+            email:
+            - email
+            name:
+            - name
+            - email
+            preferredUsername:
+            - preferred_username
+            - email
+            clientID: tQovYscUrhELIpumMxQR
+            clientSecret:
+            name: openid-okta-secret
+            extraScopes:
+            - email
+            - profile
+            issuer: https://dev-12345678.okta.com                       
+        type: OpenID
+    EOF
 ```
 3. Watch the pods in the `openshift-authentication` namespace (it'll take a minute for OpenShift to pickup the config change and apply it). You'll want to wait until the pod is in `RUNNING` status with a relatively young age:
 ```
@@ -108,8 +108,9 @@ downloads   downloads-openshift-console.apps.<cluster-name>.<cluster domain>    
 
 5. Login with your Okta user and you should see the OpenShift console (albeit with essentially no privileges). That's because we have configured Okta for **Authentication** but not **Authorization**.
 6. We need to add either a `rolebinding` or `clusterrolebinding` to the user that just authenticated. Note there are ways to do this automagically in OpenShift via groups, but in the interest of brevity, we're going to grant roles manually.  For more information on Default cluster roles and the difference between `RoleBindings` and `ClusterRoleBindings`, check out the [Red Hat OpenShift Authentication and Authorization Documentation](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.13/html-single/authentication_and_authorization/index#default-roles_using-rbac).
-    oc create clusterrolebinding cluster-admin-mattslotten --clusterrole=cluster-admin --user=matt.slotten@hisemail.com
-
+```
+oc create clusterrolebinding cluster-admin-mattslotten --clusterrole=cluster-admin --user=matt.slotten@hisemail.com
+```
 ## Configure OAuth for Kasten K10 Authentication and Authorization
 
 So we've got Okta working for our OpenShift cluster, now let's get it working for Kasten K10 so we can leverage the benefits of Single Sign On for both OpenShift and Kasten K10.
@@ -165,7 +166,7 @@ If you installed Kasten K10 previously using a helm chart, you'll need to use `h
 
 If you installed Kasten K10 via the OpenShift OperatorHub, you'll need to update the YAML configuration of the operator under the `spec` section:
 
-![OpenShift Operator YAML](images/blogs/ocp_operator_yaml.png):
+![OpenShift Operator YAML](images/blogs/ocp_operator_yaml.png)
 ```
 apiVersion: apik10.kasten.io/v1alpha1
 kind: K10
