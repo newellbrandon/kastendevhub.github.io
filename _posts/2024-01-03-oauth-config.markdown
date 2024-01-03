@@ -15,11 +15,15 @@ For those of you who prefer to consume content via YouTube, here's a video outli
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wuSZdGAUutY?si=IE8qP7D673OacHE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+# Why Does Security Even Matter for K8s?
+
 I've always considered security a necessary evil in my line of work - we could do so many cool things, use that super slick new feature, or solve world hunger if only the InfoSec/AppSec/SecOps/etc team didn't get in the way. Okay, okay, maybe I'm being a bit hyperbolic... and maybe even a bit hypocritical having previously worked for an AppSec company. But hey, click-bait sells.
 
 The truth of the matter is we really do need security in our infrastructure, applications, and clouds, now more than ever. While emergent and improving technologies like Kubernetes, IaC, RESTful APIs, and generative AI make our lives as IT engineers, DevOps, PlatformOps, or CloudOps easier, so do they for threat actors, or "hackers" (such an overused term - insert a heavily photoshopped dude in a black hoodie here, with some green HTML behind him to add credibility). Just as normal "civilians" are beginning to learn and use automation and AI more in their daily lives, you can bet so too are the script kiddies, LulzSec (or the equivalent collectives today), and foreign government-sponsored cyber intelligence units, and they're miles ahead in their sophisitication and use of these tools.
 
 And before I launch into a poetic soliloquy of philosophy, technology, and the human condition, let's narrow the scope a bit of this blog post to something a bit more practical - okay let's narrow the scope a lot bit. We're going to talk about implementing Authentication for OpenShift and Kasten K10.
+
+## AuthN and AuthZ
 
 A big part of security is properly implementing both Authentication (AuthN) and Authorization (AuthZ) to ensure that only people we trust are allowed in, via the right door and perhaps only into the right room:
 
