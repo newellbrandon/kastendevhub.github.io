@@ -228,7 +228,7 @@ spec:
 $ oc get pods -n kasten-io -w
 ```
 
-{% include note.html content="As you watch the pods come up, the key one we want to keep an eye on is named `auth-svc-`. If there's a misconfiguration, we'll see that pod CrashLoopBackOff or Error.  In writing this blog, I missed a subdomain for the OpenShift API Server URL, so I was seeing an error in the auth-svc pod logs of `cause":{\"message\":\"dial tcp 192.1.2.3:24224: connect: connection refused\"}}}`" %}
+{% include note.html content="As you watch the pods come up, the key one we want to keep an eye on is named `auth-svc-`. If there's a misconfiguration, we'll see that pod CrashLoopBackOff or Error.  In writing this blog, I missed a subdomain for the OpenShift API Server URL, so I was seeing an error in the auth-svc pod logs of `cause:{message:dial tcp 192.1.2.3:24224: connect: connection refused}}}` " %}
 
 
 And that's pretty much it! 
