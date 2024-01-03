@@ -138,6 +138,7 @@ k10-route   k10-route-kasten-io.apps.<cluster-name>.<cluster domain>   /k10/   g
 ```
 
 2. We'll use the HOST/PORT data to create a Service Account with the `serviceaccounts.openshift.io/oauth-redirecturi.dex` annotation
+
 ```
 cat <<EOF | oc apply -f -
 apiVersion: v1
