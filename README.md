@@ -21,11 +21,15 @@ referenced by those posts should be saved to `images/blogs/`
 
 Pages can be either markdown or HTML, saved to the `_pages` directory
 
+### Contributing
+
+Upon every commit/merged PR, github pages automatically triggers a GitHub action to render the site
+
 ## Resources
 
 In addition to Markdown, the site is built on a number of underlying technologies or templates:
 
-- [GitHub Pages]https://pages.github.com/)
+- [GitHub Pages](https://pages.github.com/)
 - [Dann Jekyll Theme](https://dann-jekyll.netlify.app/)
 - [Jekyll](https://jekyllrb.com/)
 - [Jekyll Liquid templating](https://jekyllrb.com/docs/liquid/)
