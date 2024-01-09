@@ -3,7 +3,7 @@ layout: post
 title: Authentication, Authorization, and OpenShift OAuth, Oh My
 description: In this blog post, we cover how to implement Okta as an Auth Provider for OpenShift and in turn, configuring it for Kasten K10
 date: 2024-01-03 11:32:35 +0300
-author: admin
+author: mattslotten
 image: '/images/blogs/locks_keys_header.jpg'
 image_caption: 'Using Okta with OpenShift and Kasten K10'
 tags: [openshift, authentication, oauth, multicluster]

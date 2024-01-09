@@ -3,7 +3,7 @@ layout: post
 title: Application Consistent Backups and Why They Matter for K8s
 description: In this blog post, we cover how to implement an application consistent blueprint for a bitnami MongoDB
 date: 2023-12-19 10:25:35 +0300
-author: admin
+author: mattslotten
 image: '/images/blogs/appblueprint_header.jpg'
 image_caption: 'Leverage Kanister Blueprints for Application Consistent Snapshots'
 tags: [kanister, application consistent, backup, snapshot]
