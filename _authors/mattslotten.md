@@ -1,6 +1,6 @@
 ---
-username: admin
-name: Kasten K10
+username: mattslotten
+name: Matt Slotten
 image: '/images/mattslotten_headshot.jpg'
 website: https://www.google.com
 twitter: https://twitter.com

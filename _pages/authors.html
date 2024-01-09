@@ -15,8 +15,7 @@ permalink: /authors/
     <div class="container">
       <div class="row">
         {% for author in site.authors %}
-        <!-- exclude admin author using conditional -->
-        {% if author.username != 'admin' %}
+          {% if author.username != "admin" %}
           {% assign post_count = site.posts | where:"author", author.username %}
           <div class="col col-4 col-d-6 col-t-12">
             <div class="authors__info">
@@ -27,8 +26,8 @@ permalink: /authors/
               {% endif %}
               <p class="authors__description">{{ author.content }}</p>
             </div>
-        {% endif %}
-        </div>
+          </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
