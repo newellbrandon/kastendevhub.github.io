@@ -32,7 +32,7 @@ Upon every commit/merged PR, github pages automatically triggers a GitHub action
 Testing locally is relatively simple, although note that the way that the Dann Jekyll template has been implemented, images will not load when testing locally. To run/test the site locally, you'll need the following pre-requisites:
 
 1. [Install the latest Ruby](https://mac.install.guide/ruby/13.html)
-2. Install Bundler
+2. [Install Bundler](https://bundler.io/)
 
 On Mac OSX, installing ruby can be accomplished via `brew`, the only _slight_ hangup is ensuring your host path is updated to use the homebrew ruby (`/opt/homebrew/opt/ruby/bin/ruby`) as opposed to the old version bundles with OSX, installed to `/usr/bin/ruby`:
 
@@ -49,7 +49,7 @@ fi
 ```
 Then just source the updated file (e.g.`source ~/.zprofile` or `~/.bash_profile`)
 
-Next, (install bundler)[https://bundler.io/]
+Next, [install bundler](https://bundler.io/)
 
 #### Testing Locally
 
