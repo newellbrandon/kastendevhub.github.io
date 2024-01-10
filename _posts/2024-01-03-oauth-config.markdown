@@ -171,11 +171,11 @@ $ oc --namespace kasten-io create configmap custom-ca-bundle-store --from-file=c
 ```
 7. Now it's time to update our Kasten K10 configuration to use OAuth as an identity provider.
 
-If you installed Kasten K10 previously using a helm chart, you'll need to use `helm upgrade` and set the appropriate flags as defined in the [Kasten K10 documentation](https://docs.kasten.io/latest/access/authentication.html#install-or-update-k10-with-openshift-authentication).
+   If you installed Kasten K10 previously using a helm chart, you'll need to use `helm upgrade` and set the appropriate flags as defined in the [Kasten K10 documentation](https://docs.kasten.io/latest/access/authentication.html#install-or-update-k10-with-openshift-authentication).
 
-If you installed Kasten K10 via the OpenShift OperatorHub, you'll need to update the YAML configuration of the operator under the `spec` section:
+   If you installed Kasten K10 via the OpenShift OperatorHub, you'll need to update the YAML configuration of the operator under the `spec` section:
 
-![OpenShift Operator YAML](/images/posts/2024-01-03-oauth-config/ocp_operator_yaml.png)
+   ![OpenShift Operator YAML](/images/posts/2024-01-03-oauth-config/ocp_operator_yaml.png)
 ```
 apiVersion: apik10.kasten.io/v1alpha1
 kind: K10
@@ -202,13 +202,14 @@ route:
 ```
 $ oc get pods -n kasten-io -w
 ```
-{% include note.html content="As you watch the pods come up, the key one we want to keep an eye on is named `auth-svc-`. If there's a misconfiguration, we'll see that pod CrashLoopBackOff or Error.  In writing this blog, I missed a subdomain for the OpenShift API Server URL, so I was seeing an error in the auth-svc pod logs of `cause:{message:dial tcp 192.1.2.3:24224: connect: connection refused}}}` " %}
+
+{: .alert-info }
+As you watch the pods come up, the key one we want to keep an eye on is named `auth-svc-`. If there's a misconfiguration, we'll see that pod CrashLoopBackOff or Error.  In writing this blog, I missed a subdomain for the OpenShift API Server URL, so I was seeing an error in the auth-svc pod logs of `cause:{message:dial tcp 192.1.2.3:24224: connect: connection refused}}}`
 
 And that's pretty much it! 
 
-{% include note.html content="Because our user has the clusterrolebinding of cluster-admin, he has unrestricted access within k10.  If we gave him a narrower scope on the cluster, we can still grant him Kasten administrative access using the `k10-admin` clusterrole:
+{: .alert-info }
+Because our user has the clusterrolebinding of cluster-admin, he has unrestricted access within k10.  If we gave him a narrower scope on the cluster, we can still grant him Kasten administrative access using the `k10-admin` clusterrole:
 ```
 $ oc create clusterrolebinding k10-admin-kastendemo --clusterrole=k10-admin --user=matt.slotten@hisemail.com
 ```
-" %}
-

@@ -60,64 +60,63 @@ Fortunately Kasten has the capability to leverage a construct called [Kanister B
 
 And the good news is our Pacman application leverages an underlying Bitnami instance of MongoDB, so we can simply modify that example blueprint for our purposes. The YAML is below and we won't run through what everything does, but there's a few important lines to note to understand what's going on:
 
-```
-cat <<EOF | k -n kasten-io apply -f -                                                                      
-apiVersion: cr.kanister.io/v1alpha1
-kind: Blueprint
-metadata:
-  name: mongo-hooks
-actions:
-  backupPrehook:
-    phases:
-    - func: KubeExec
-      name: lockMongo
-      objects:
-        mongoDbSecret:
-          kind: Secret
-          name: 'pacman-mongodb'
-          namespace: '{{ .Deployment.Namespace }}'
-      args:
-        namespace: "{{ .Deployment.Namespace }}"
-        pod: "{{ index .Deployment.Pods 0 }}"
-        container: mongodb
-        command:
-        - bash
-        - -o
-        - errexit
-        - -o
-        - pipefail
-        - -c
-        - |
-          export MONGODB_ROOT_PASSWORD='{{ index .Phases.lockMongo.Secrets.mongoDbSecret.Data "mongodb-root-password" | toString }}'
-          mongosh --authenticationDatabase admin -u root -p "\${MONGODB_ROOT_PASSWORD}" --eval="db.fsyncLock()"
-  backupPosthook:
-    phases:
-    - func: KubeExec
-      name: unlockMongo
-      objects:
-        mongoDbSecret:
-          kind: Secret
-          name: 'pacman-mongodb'
-          namespace: '{{ .Deployment.Namespace }}'
-      args:
-        namespace: "{{ .Deployment.Namespace }}"
-        pod: "{{ index .Deployment.Pods 0 }}"
-        container: mongodb
-        command:
-        - bash
-        - -o
-        - errexit
-        - -o
-        - pipefail
-        - -c
-        - |
-          export MONGODB_ROOT_PASSWORD='{{ index .Phases.unlockMongo.Secrets.mongoDbSecret.Data "mongodb-root-password" | toString }}'
-          mongosh --authenticationDatabase admin -u root -p "\${MONGODB_ROOT_PASSWORD}" --eval="db.fsyncUnlock()"
-EOF
+    cat <<EOF | k -n kasten-io apply -f -                                                                      
+    apiVersion: cr.kanister.io/v1alpha1
+    kind: Blueprint
+    metadata:
+      name: mongo-hooks
+    actions:
+      backupPrehook:
+        phases:
+        - func: KubeExec
+          name: lockMongo
+          objects:
+            mongoDbSecret:
+              kind: Secret
+              name: 'pacman-mongodb'
+              namespace: '{{ .Deployment.Namespace }}'
+          args:
+            namespace: "{{ .Deployment.Namespace }}"
+            pod: "{{ index .Deployment.Pods 0 }}"
+            container: mongodb
+            command:
+            - bash
+            - -o
+            - errexit
+            - -o
+            - pipefail
+            - -c
+            - |
+              export MONGODB_ROOT_PASSWORD='{{ index .Phases.lockMongo.Secrets.mongoDbSecret.Data "mongodb-root-password" | toString }}'
+              mongosh --authenticationDatabase admin -u root -p "\${MONGODB_ROOT_PASSWORD}" --eval="db.fsyncLock()"
+      backupPosthook:
+        phases:
+        - func: KubeExec
+          name: unlockMongo
+          objects:
+            mongoDbSecret:
+              kind: Secret
+              name: 'pacman-mongodb'
+              namespace: '{{ .Deployment.Namespace }}'
+          args:
+            namespace: "{{ .Deployment.Namespace }}"
+            pod: "{{ index .Deployment.Pods 0 }}"
+            container: mongodb
+            command:
+            - bash
+            - -o
+            - errexit
+            - -o
+            - pipefail
+            - -c
+            - |
+              export MONGODB_ROOT_PASSWORD='{{ index .Phases.unlockMongo.Secrets.mongoDbSecret.Data "mongodb-root-password" | toString }}'
+              mongosh --authenticationDatabase admin -u root -p "\${MONGODB_ROOT_PASSWORD}" --eval="db.fsyncUnlock()"
+    EOF
 
-```
-{% include note.html content="Notice how we escape the dollar sign character in the above YAML. That's because we're applying the YAML directly from a BASH shell (see the `cat <<EOF | k -n kasten-io apply -f -` at the top of the file ), and if we didn't do that, our local shell would be looking for a variable called `MONGODB_ROOT_PASSWORD` which probably doesn't exist on our local machine and in the rare case that it did, it may not match what's actually configured in our K8s cluster. Take a wild guess how I found this quirk when applying directly via shell..." %}
-
+{: .alert-info }
+Notice how we escape the dollar sign character in the above YAML. That's because we're applying the YAML directly from a BASH shell (see the `cat <<EOF | k -n kasten-io apply -f -` at the top of the file ), and if we didn't do that, our local shell would be looking for a variable called `MONGODB_ROOT_PASSWORD` which probably doesn't exist on our local machine and in the rare case that it did, it may not match what's actually configured in our K8s cluster. Take a wild guess how I found this quirk when applying directly via shell...
+{: .alert-info }
 
 ![Kasten Blueprints UI](/images/posts/2023-12-19-pacman-blueprint/blueprints.png)
 

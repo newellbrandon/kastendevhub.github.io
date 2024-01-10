@@ -57,3 +57,25 @@ defaults:
 sass:
   sass_dir: _sass
   style: compressed
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+callouts_level: loud # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: yellow
+  warning:
+    title: Warning
+    color: red
