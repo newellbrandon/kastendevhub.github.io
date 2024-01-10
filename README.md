@@ -55,7 +55,7 @@ fi
 
 Then just source the updated file (e.g.: `source ~/.zprofile` or `~/.bash_profile`)
 
-Alternatively, use the [rbenv](https://github.com/rbenv/rbenv) evironment manager (optionally installed via [anyenv](https://anyenv.github.io/) which has the benefits of not installing Brew's `ruby` or `rbenv` and having to manage Gem upgrade depenencies, because it compiles and installs Ruby+Gems per enviroment to avoid system or Brew upgrade conflicts). To determine the latest stable Ruby release, check https://www.ruby-lang.org/en/downloads/.
+Alternatively, use the [rbenv](https://github.com/rbenv/rbenv) evironment manager (optionally installed via [anyenv](https://anyenv.github.io/) which has the benefits of not installing Brew's `ruby` or `rbenv` and having to manage Gem upgrade dependencies, because it compiles and installs Ruby+Gems per enviroment to avoid system or Brew upgrade conflicts). To determine the latest stable Ruby release, check https://www.ruby-lang.org/en/downloads/.
 
 ```bash
 brew install anyenv libyaml \
