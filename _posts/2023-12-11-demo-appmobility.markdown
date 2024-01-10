@@ -4,7 +4,7 @@ title: Application Mobility Interactive Demo
 description: The latest interactive demo is available, focused on simple Kubernetes application migration.
 date: 2023-12-11 18:46:35 +0300
 author: admin
-image: '/images/_posts/2023-12-11-demo-appmobility/app_mobility.png'
+image: '/images/posts/2023-12-11-demo-appmobility/app_mobility.png'
 image_caption: 'App Mobility with Kasten by Veeam'
 tags: [demo, mobility, redhat, openshift]
 featured:
