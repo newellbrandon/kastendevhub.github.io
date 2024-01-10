@@ -25,6 +25,39 @@ Pages can be either markdown or HTML, saved to the `_pages` directory
 
 Upon every commit/merged PR, github pages automatically triggers a GitHub action to render the site
 
+### Testing Locally
+
+#### Environment Set-up
+
+Testing locally is relatively simple, although note that the way that the Dann Jekyll template has been implemented, images will not load when testing locally. To run/test the site locally, you'll need the following pre-requisites:
+
+1. [Install the latest Ruby](https://mac.install.guide/ruby/13.html)
+2. Install Bundler
+
+On Mac OSX, installing ruby can be accomplished via `brew`, the only _slight_ hangup is ensuring your host path is updated to use the homebrew ruby (`/opt/homebrew/opt/ruby/bin/ruby`) as opposed to the old version bundles with OSX, installed to `/usr/bin/ruby`:
+
+`$ brew install ruby`
+
+Update hostpath. If using zsh, edit `~/.zshrc` or `~/.zprofile`. If using bash, edit `~/.bash_profile` or `~/.bashrc` to add the following:
+
+```
+export HOMEBREW_PREFIX=/opt/homebrew
+if [ -d "$HOMEBREW_PREFIX/opt/ruby/bin" ]; then
+  export PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$PATH"
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
+```
+Then just source the updated file (e.g.`source ~/.zprofile` or `~/.bash_profile`)
+
+Next, (install bundler)[https://bundler.io/]
+
+#### Testing Locally
+
+1. Within a terminal, navigate to the source for the site
+2. Run `bundle install`
+3. Run `bundle exec jekyll serve`
+4. Open a browser and navigate to `http://localhost:4000` to view the site.
+
 ## Resources
 
 In addition to Markdown, the site is built on a number of underlying technologies or templates:
@@ -33,3 +66,5 @@ In addition to Markdown, the site is built on a number of underlying technologie
 - [Dann Jekyll Theme](https://dann-jekyll.netlify.app/)
 - [Jekyll](https://jekyllrb.com/)
 - [Jekyll Liquid templating](https://jekyllrb.com/docs/liquid/)
+- [Testing your github pages site locally with jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
+- [Installing Ruby on Mac OSX](https://mac.install.guide/ruby/13.html)
