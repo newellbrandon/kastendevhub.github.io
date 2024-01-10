@@ -5,17 +5,15 @@ can share their experiences, tips, tricks, guides, recipes, etc around implement
 forward-facing, or otherise non-public knowledge should be published via this site. Any official announcements, support documentation, knowledge base articles
 or release notes should be published via official channels
 
-A few tips to get started:
-
 ## Getting Started
 
-This site is managed via GitHub pages. As a result, there are no databases, backends, etc required to publish and manage site content.  All pages are written using the common
+Kasten DevHub is produced with a [Static Site Generator](https://en.wikipedia.org/wiki/Static_site_generator) called Jekyll and published on GitHub pages, see [resources](#Resources). As a result, there are no databases, backends, etc required to publish and manage site content.  All pages are written using the common
 documentation markup language Markdown. Here's a great [cheat-sheet](https://www.markdownguide.org/cheat-sheet/) to help you get started.
 
 ### Blog Posts
 
-Blog posts are individual markdown files with the name format of YYYY-MM-DD-blog-title.markdown and are stored in the `_posts` directory. Any images or media
-referenced by those posts should be saved to `images/blogs/`
+Blog posts are individual markdown files with the name format of `YYYY-MM-DD-blog-title.markdown` and are stored in the `_posts` directory. Any images or media
+referenced by those posts should be saved to `images/blogs/` It is ideal to minimize image file size for quick web page loading and mantaining this repository's capacity quota.
 
 ### Pages
 
@@ -55,8 +53,12 @@ Next, [install bundler](https://bundler.io/)
 
 1. Within a terminal, navigate to the source for the site
 2. Run `bundle install`
-3. Run `bundle exec jekyll serve`
+3. Run `bundle exec jekyll serve --baseurl=''`
 4. Open a browser and navigate to `http://localhost:4000` to view the site.
+
+More CLI options: https://jekyllrb.com/docs/configuration/options/#serve-command-options,
+e.g.: `bundle exec jekyll serve --baseurl='' --livereload --open-url &`
+
 
 ## Resources
 
