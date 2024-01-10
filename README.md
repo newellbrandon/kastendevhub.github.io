@@ -41,7 +41,7 @@ On Mac OSX, install with `brew`, the only _slight_ hangup is ensuring your host 
 
 `$ brew install ruby`
 
-Update your system `$PATH` by adding the following
+Update your system `$PATH` by adding the following:
 
 ```shell
 export HOMEBREW_PREFIX=/opt/homebrew
