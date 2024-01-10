@@ -42,26 +42,24 @@ fi
 
 Then just source the updated file (e.g.: `source ~/.zprofile` or `~/.bash_profile`)
 
-Alternatively, use an evironment manager, such as [rbenv](https://github.com/rbenv/rbenv) (optionally installed via [anyenv](https://anyenv.github.io/)), e.g.:
+Alternatively, use the [rbenv](https://github.com/rbenv/rbenv) evironment manager (optionally installed via [anyenv](https://anyenv.github.io/) which has the benefits of not installing Brew's `ruby` or `rbenv`, being tied to `brew upgrade`, and having to manage Gem upgrade depenencies, because it compiles and installs Ruby+Gems per enviroment to avoid system or Brew conflicts). To determine the latest stable Ruby release, check https://www.ruby-lang.org/en/downloads/.
 
 ```bash
-brew install anyenv libyaml ruby \
+brew install anyenv libyaml \
 && cat >> ~/.zshrc <<- 'EoM'
-if command -v anyenv; then
+if command -v anyenv >&/dev/null; then
   eval "$(anyenv init -)"
 fi
 EoM
 
 source ~/.zshrc && anyenv install rbenv && exec $SHELL -l
-# to determine stable release: open https://www.ruby-lang.org/en/downloads/
+# the above can be skipped if not using anyenv; use `brew install rbenv` instead
 rbenv install --list && rbenv install 3.3.0 && rbenv rehash
 
 cd ${YOUR_FORK-~/Documents/github.com/mlavi/kastendevhub/}
-# will use .ruby-version; `rbenv local` should display 3.3.0
-bundle install # should install to local, not global or system Ruby 
+# uses .ruby-version; `rbenv local` should display 3.3.0
+bundle install # should install to local, not global or system Ruby
 ```
-
-
 
 #### Testing Locally
 
