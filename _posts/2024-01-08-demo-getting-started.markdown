@@ -4,7 +4,7 @@ title: Getting Started with Kasten K10 by Veeam Interactive Demo
 description: A getting started interactive demo, we take a look at the UI and key features of Kasten K10 by Veeam
 date: 2024-01-08 12:03:35 +0500
 author: admin
-image: '/images/blogs/k10_gettingstarted_demo.png'
+image: '/images/posts/2024-01-08-demo-getting-started/k10_gettingstarted_demo.png'
 image_caption: 'Getting Started with Kasten by Veeam'
 tags: [demo, kubernetes, data protection, backup policies]
 featured:
