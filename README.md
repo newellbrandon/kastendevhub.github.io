@@ -17,7 +17,7 @@ Pages can be either markdown or HTML, saved to the `_pages` directory
 ### Contributing
 
 1. Fork the [kastendevhub/kastendevhub.github.io repo](https://github.com/kastendevhub/kastendevhub.github.io/fork)
-2. [Sync your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) and resolve any merge problems.
+2. [Sync your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) and resolve any merge problems
 
     ```bash
     git remote add upstream git@github.com:kastendevhub/kastendevhub.github.io.git \
@@ -26,8 +26,8 @@ Pages can be either markdown or HTML, saved to the `_pages` directory
     git fetch upstream && git diff upstream/master && git merge upstream/master
     ```
 
-3. Make changes and [test locally](#testing-locally-1); when ready, git commit and push your fork.
-4. Submit a Pull Request and add at least one peer reviewer.
+3. Make changes and [test locally](#testing-locally-1); when ready, git commit and push your fork
+4. Submit a Pull Request and add at least one peer reviewer
 
 Upon every commit/merged PR, Github pages automatically triggers a GitHub action to render the site.
 
@@ -55,7 +55,7 @@ fi
 
 Then just source the updated file (e.g.: `source ~/.zprofile` or `~/.bash_profile`)
 
-Alternatively, use the [rbenv](https://github.com/rbenv/rbenv) evironment manager (optionally installed via [anyenv](https://anyenv.github.io/) which has the benefits of not installing Brew's `ruby` or `rbenv`, being tied to `brew upgrade`, and having to manage Gem upgrade depenencies, because it compiles and installs Ruby+Gems per enviroment to avoid system or Brew conflicts). To determine the latest stable Ruby release, check https://www.ruby-lang.org/en/downloads/.
+Alternatively, use the [rbenv](https://github.com/rbenv/rbenv) evironment manager (optionally installed via [anyenv](https://anyenv.github.io/) which has the benefits of not installing Brew's `ruby` or `rbenv` and having to manage Gem upgrade depenencies, because it compiles and installs Ruby+Gems per enviroment to avoid system or Brew upgrade conflicts). To determine the latest stable Ruby release, check https://www.ruby-lang.org/en/downloads/.
 
 ```bash
 brew install anyenv libyaml \
