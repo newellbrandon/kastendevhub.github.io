@@ -4,7 +4,7 @@ title: Authentication, Authorization, and OpenShift OAuth, Oh My
 description: In this blog post, we cover how to implement Okta as an Auth Provider for OpenShift and in turn, configuring it for Kasten K10
 date: 2024-01-03 11:32:35 +0300
 author: mattslotten
-image: '/images/blogs/locks_keys_header.jpg'
+image: '/images/_posts/2024-01-03-oauth-config/locks_keys_header.jpg'
 image_caption: 'Using Okta with OpenShift and Kasten K10'
 tags: [openshift, authentication, oauth, multicluster]
 featured:
@@ -113,7 +113,7 @@ NAME        HOST/PORT                                                PATH   SERV
 console     console-openshift-console.apps.<cluster-name>.<cluster domain>            console     https   reencrypt/Redirect   None
 downloads   downloads-openshift-console.apps.<cluster-name>.<cluster domain>         downloads   http    edge/Redirect        None
 ```
-![OpenShift Auth Providers](images/blogs/openshiftauthproviders.png)
+![OpenShift Auth Providers](/images/_posts/2024-01-03-oauth-config/openshiftauthproviders.png)
 
 5. Login with your Okta user and you should see the OpenShift console (albeit with essentially no privileges). That's because we have configured Okta for **Authentication** but not **Authorization**.
 6. We need to add either a `rolebinding` or `clusterrolebinding` to the user that just authenticated. Note there are ways to do this automagically in OpenShift via groups, but in the interest of brevity, we're going to grant roles manually.  For more information on Default cluster roles and the difference between `RoleBindings` and `ClusterRoleBindings`, check out the [Red Hat OpenShift Authentication and Authorization Documentation](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.13/html-single/authentication_and_authorization/index#default-roles_using-rbac).
@@ -175,7 +175,7 @@ If you installed Kasten K10 previously using a helm chart, you'll need to use `h
 
 If you installed Kasten K10 via the OpenShift OperatorHub, you'll need to update the YAML configuration of the operator under the `spec` section:
 
-![OpenShift Operator YAML](images/blogs/ocp_operator_yaml.png)
+![OpenShift Operator YAML](/images/_posts/2024-01-03-oauth-config/ocp_operator_yaml.png)
 ```
 apiVersion: apik10.kasten.io/v1alpha1
 kind: K10

@@ -4,7 +4,7 @@ title: Red Hat Openshift on AWS Interactive Demo
 description: In this interactive demo, see how quick and easy it is to deploy Red Hat OpenShift on AWS and protect workloads.
 date: 2023-12-10 12:46:35 +0300
 author: admin
-image: '/images/rosa.png'
+image: '/images/_posts/2023-12-10-demo-rosa/rosa.png'
 image_caption: 'Red Hat OpenShift on AWS and Kasten by Veeam'
 tags: [demo, rosa, openshift, multicloud]
 featured:
