@@ -53,12 +53,11 @@ Next, [install bundler](https://bundler.io/)
 
 1. Within a terminal, navigate to the source for the site
 2. Run `bundle install`
-3. Run `bundle exec jekyll serve --baseurl=''`
+3. Run `bundle exec jekyll serve --baseurl='' --livereload --open-url`
 4. Open a browser and navigate to `http://localhost:4000` to view the site.
 
 More CLI options: https://jekyllrb.com/docs/configuration/options/#serve-command-options,
-e.g.: `bundle exec jekyll serve --baseurl='' --livereload --open-url &`
-
+e.g.: `bundle exec jekyll serve --baseurl='' --drafts &`
 
 ## Resources
 
