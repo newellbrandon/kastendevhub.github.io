@@ -4,11 +4,11 @@ Welcome to the Veeam Kasten DevHub site. This site is intended to servce as a pu
 
 ## Getting Started
 
-Kasten DevHub is produced with a [Static Site Generator](https://en.wikipedia.org/wiki/Static_site_generator) called Jekyll and published on GitHub pages, see [resources](#Resources). As a result, there are no databases, backends, etc required to publish and manage site content.  All pages are written using the common documentation markup language Markdown. Here's a great [cheat-sheet](https://www.markdownguide.org/cheat-sheet/) to help you get started.
+Kasten DevHub is produced with a [Static Site Generator](https://en.wikipedia.org/wiki/Static_site_generator) called Jekyll and published on GitHub pages, see [resources](#Resources). As a result, there are no databases, backends, etc required to publish and manage site content.  All pages are written using the common documentation markup language Markdown. Here's a great [cheat-sheet](https://www.markdownguide.org/cheat-sheet/) to help you get started and [_pages/elements.md](https://veeamkasten.dev/elements/) is a working example.
 
 ### Blog Posts
 
-Blog posts are individual markdown files with the name format of `YYYY-MM-DD-blog-title.markdown` and are stored in the `_posts` directory. Any images or media referenced by those posts should be saved to `images/blogs/` It is ideal to minimize image file size for quick web page loading and mantaining this repository's capacity quota.
+Blog posts are individual markdown files with the name format of `YYYY-MM-DD-blog-title.markdown` and are stored in the `_posts` directory. Any images or media referenced by those posts should be saved to `images/posts/` It is ideal to minimize image file size for quick web page loading and mantaining this repository's capacity quota.
 
 ### Pages
 
@@ -16,7 +16,20 @@ Pages can be either markdown or HTML, saved to the `_pages` directory
 
 ### Contributing
 
-Upon every commit/merged PR, Github pages automatically triggers a GitHub action to render the site
+1. Fork the [kastendevhub/kastendevhub.github.io repo](https://github.com/kastendevhub/kastendevhub.github.io/fork)
+2. [Sync your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) and resolve any merge problems.
+
+    ```bash
+    git remote add upstream git@github.com:kastendevhub/kastendevhub.github.io.git \
+      && git remote --verbose # one time setup; see remote added: upstream
+
+    git fetch upstream && git diff upstream/master && git merge upstream/master
+    ```
+
+3. Make changes and [test locally](#testing-locally-1); when ready, git commit and push your fork.
+4. Submit a Pull Request and add at least one peer reviewer.
+
+Upon every commit/merged PR, Github pages automatically triggers a GitHub action to render the site.
 
 ### Testing Locally
 
@@ -72,9 +85,9 @@ bundle install # should install to local, not global or system Ruby
 In addition to Markdown, the site is built on a number of underlying technologies or templates:
 
 - [GitHub Pages](https://pages.github.com/)
-- [Dann Jekyll Theme](https://dann-jekyll.netlify.app/)
+  - [Testing your github pages site locally with jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
 - [Jekyll](https://jekyllrb.com/)
-- [Jekyll Liquid templating](https://jekyllrb.com/docs/liquid/)
-- [Testing your github pages site locally with jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
+  - [Dann Jekyll Theme](https://dann-jekyll.netlify.app/)
+  - [Jekyll Liquid templating](https://jekyllrb.com/docs/liquid/)
   - [Jekyll server CLI options](https://jekyllrb.com/docs/configuration/options/#serve-command-options), such as `--drafts`
 - [Installing Ruby on Mac OSX](https://mac.install.guide/ruby/13.html)
