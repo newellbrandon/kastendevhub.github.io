@@ -1,6 +1,6 @@
 # Veeam Kasten DevHub
 
-Welcome to the Veeam Kasten DevHub site. This site is intended to servce as a publicly-accessible web property where engineers, architects, partners, and others can share their experiences, tips, tricks, guides, recipes, etc around implementing, managing, integrating, and enhancing Kasten K10. Note that nothing proprietary, forward-facing, or otherise non-public knowledge should be published via this site. Any official announcements, support documentation, knowledge base articles or release notes should be published via official channels
+Welcome to the Veeam Kasten DevHub site. This site is intended to serve as a publicly-accessible web property where engineers, architects, partners, and others can share their experiences, tips, tricks, guides, recipes, etc around implementing, managing, integrating, and enhancing Kasten K10. Note that nothing proprietary, forward-facing, or otherwise non-public knowledge should be published via this site. Any official announcements, support documentation, knowledge base articles or release notes should be published via official channels
 
 ## Getting Started
 
@@ -8,11 +8,33 @@ Kasten DevHub is produced with a [Static Site Generator](https://en.wikipedia.or
 
 ### Blog Posts
 
-Blog posts are individual markdown files with the name format of `YYYY-MM-DD-blog-title.markdown` and are stored in the `_posts` directory. Any images or media referenced by those posts should be saved to `images/posts/` It is ideal to minimize image file size for quick web page loading and mantaining this repository's capacity quota.
+Blog posts are individual markdown files with the name format of `YYYY-MM-DD-title-name.markdown` in the `_posts` directory; using a file suffix of `.md` also works.
+
+Start by creating your `_authors/yourname.md` biography description with a `images/yourname_headshot.suffix`.
+
+### Markdown: Front Matter
+
+https://jekyllrb.com/docs/front-matter/ defines global variables: `layout` and `published` and custom variables used for posts: `date` and `tags`, we don't use `categories` yet. The remaining variables are defined by the template, such as: `author` (which should match `_authors/yourname.md`), `image_caption`, etc.
+
+Any `image` or media referenced by posts should be saved to `images/posts/` It is ideal to minimize image file size for quick web page loading and maintaining this repository's capacity quota.
+
+#### Drafts and Multiple Authors
+
+You can actively iterate and/or collaborate by making a post in the `_drafts` folder, omitting a filename date prefix, and reviewing with the `bundle exec jekyll server --drafts` flag. Drafts are not generated for the production environment, but they will exist in this public git repository when part of a push, PR, etc. Promote by `git mv _drafts/YOURPOST.md _posts/DATE-YOURPOST.md` and make a pull request when ready.
+
+The `author` variable accepts multiple authors, each author will get a post count credit and link, but the author icon will show the admin.
+
+The script `./new_draft_post.sh` leverages [_drafts/_template.md](_drafts/_template.md) and has an example of multiple authors.
+
+#### Early Publishing and Unpublishing
+
+__NOT TESTED:__ You can set the publishing `date` variable for the future, but because we do not have a schedule publishing job, it will go out with the next publish operation after that date.
+
+You can unpublish or hide posts (temporarily or forever) by setting the variable `published: false` and review them locally with the `bundle exec jekyll server --unpublished` flag. They remain in git history of this repository.
 
 ### Pages
 
-Pages can be either markdown or HTML, saved to the `_pages` directory
+Pages can be either Markdown or HTML, saved to the `_pages` directory. Pages generally are used for site-wide resources, e.g.: About, Authors, Contact, Tags, etc.
 
 ### Contributing
 
