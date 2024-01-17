@@ -14,7 +14,7 @@ Start by creating your `_authors/yourname.md` biography description with a `imag
 
 ### Markdown: Front Matter
 
-https://jekyllrb.com/docs/front-matter/ defines global variables: `layout` and `published` and custom variables used for posts: `date` and `tags`, we don't use `categories` yet. The remaining variables are defined by the template, such as: `author` (which should match `_authors/yourname.md`), `image_caption`, etc.
+https://jekyllrb.com/docs/front-matter/ defines global variables: `layout` and `published` and custom variables used for posts: `date` and `tags`, we don't use `categories` yet. The remaining variables are defined by the Theme, such as: `author` (which should match `_authors/yourname.md`), `image_caption`, etc.
 
 Any `image` or media referenced by posts should be saved to `images/posts/` It is ideal to minimize image file size for quick web page loading and maintaining this repository's capacity quota.
 
@@ -48,10 +48,10 @@ Pages can be either Markdown or HTML, saved to the `_pages` directory. Pages gen
     git fetch upstream && git diff upstream/master && git merge upstream/master
     ```
 
-3. Make changes and [test locally](#testing-locally-1); when ready, git commit and push your fork
+3. Make changes and [test locally](#testing-locally-1); when ready, `git commit` and `git push` your fork
 4. Submit a Pull Request and add at least one peer reviewer
 
-Upon every commit/merged PR, Github pages automatically triggers a GitHub action to render the site.
+Every commit or merged PR triggers a GitHub action to render the site for the production environment (omitting `_drafts` and `published: false`), updating GitHub pages.
 
 ### Testing Locally
 
