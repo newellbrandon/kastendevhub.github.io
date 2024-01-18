@@ -21,7 +21,7 @@ Hence we often have two requests from our customers :
 
 In this tutorial I'm going to show : 
 - How to expose user defined metrics to openshift-monitoring 
-- Query this metrics from an external service using curl 
+- Query this metrics from an external service using `curl`
 - Apply the previous to Kasten metrics 
 
 # Enable user metrics 
