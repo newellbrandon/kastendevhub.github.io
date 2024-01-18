@@ -24,10 +24,10 @@ function init.post {
     -e s/TIME/"$(date '+%H:%M:%S')"/ \
     -e s/TZ/"$(date '+%z')"/ \
     -e s/AUTHOR/${_author}/ \
-    -e s/CAPTION/${CAPTION-CAPTION}/ \
-    -e s/DESCRIPTION/${DESCRIPTION-DESCRIPTION}/ \
+    -e s/CAPTION/${CAPTION-${TITLE}}/ \
+    -e s/DESCRIPTION/${DESCRIPTION-${TITLE}}/ \
     -e s/IMAGE/${IMAGE-IMAGE}/ \
-    -e s/TAGS/${TAGS-TAGS}/ \
+    -e s/TAGS/${TAGS-${TITLE}}/ \
     -e s/TITLE/${TITLE-placeholder}/ \
     "${_template}" >> "${_filespec}" \
     && echo "|    DONE| ${_filespec}" \

@@ -51,7 +51,7 @@ Pages can be either Markdown or HTML, saved to the `_pages` directory. Pages gen
 3. Make changes and [test locally](#testing-locally-1); when ready, `git commit` and `git push` your fork
 4. Submit a Pull Request and add at least one peer reviewer
 
-Every commit or merged PR triggers a GitHub action to render the site for the production environment (omitting `_drafts` and `published: false`), updating GitHub pages.
+Every commit or merged PR triggers a GitHub action to render the site for the production environment (omitting `_drafts` and hiding navigation? to `published: false`), which updates GitHub pages.
 
 ### Testing Locally
 
