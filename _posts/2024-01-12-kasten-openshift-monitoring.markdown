@@ -111,7 +111,7 @@ You should get an output like this one
   ...
 ```
 
-This metrics list all the instances that are scraped in the opesnhift-dns namespace and their ability to respond to the scrape request. 
+This metrics list all the instances that are scraped in the `openshift-dns` namespace and their ability to respond to the scrape request. 
 
 # Let's create a user defined metrics 
 
