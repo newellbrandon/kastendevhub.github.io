@@ -31,7 +31,7 @@ function init.post {
     -e s/TITLE/${TITLE-placeholder}/ \
     "${_template}" >> "${_filespec}" \
     && echo "|    DONE| ${_filespec}" \
-    && echo "|INFO|TRY| bundle exec jekyll serve --baseurl='' --drafts --livereload --open-url --unpublished &"
+    && echo "|INFO|TRY| ${AUTOSTART_BUG}"
 }
 
 cat <<- 'EoM'
