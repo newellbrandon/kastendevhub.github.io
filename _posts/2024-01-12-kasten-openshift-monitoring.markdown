@@ -17,7 +17,7 @@ Most of the time, before you start to add Kasten to openshift there is already a
 
 Hence we often have two requests from our customers : 
 - How do I expose Kasten metrics from an external service like Zabbix or Dynatrace?
-- how do I add kasten metrics in the global openshift monitoring. 
+- How do I add Kasten metrics in the global OpenShift monitoring?
 
 In this tutorial I'm going to show : 
 - How to expose user defined metrics to openshift-monitoring 
