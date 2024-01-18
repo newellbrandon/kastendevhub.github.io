@@ -26,7 +26,7 @@ In this tutorial I'm going to show :
 
 # Enable user metrics 
 
-First you need to [enable moniroring for user defined project](https://docs.openshift.com/container-platform/4.12/monitoring/enabling-monitoring-for-user-defined-projects.html).
+First you need to [enable monitoring for user-defined projects](https://docs.openshift.com/container-platform/4.12/monitoring/enabling-monitoring-for-user-defined-projects.html).
 
 ```
 oc -n openshift-monitoring edit configmap cluster-monitoring-config
