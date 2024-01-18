@@ -801,7 +801,7 @@ The same can apply for Kasten's cpu usage as well:
 namespace:container_cpu_usage:sum{namespace='kasten-io'}
 ```
 
-Or with thanos 
+And here is the same query, this time using Thanos:
 ```
 curl -X GET -kG "https://$THANOS_QUERIER_HOST/api/v1/query?" --data-urlencode "query=namespace:container_cpu_usage:sum{namespace='kasten-io'}" -H "Authorization: Bearer $TOKEN" |jq
 ```
