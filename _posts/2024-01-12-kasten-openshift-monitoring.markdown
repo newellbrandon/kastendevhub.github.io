@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Using Openshift Monitoring for Kasten
-description: Openshift comes with an advanced monitoring stack which is fully compatible with Kasten, in this blog post I will sho how to use it.
+title: Using OpenShift Monitoring for Kasten
+description: How to use OpenShift's advanced monitoring stack with Kasten
 date: 2024-01-12 10:17:00 +0000
 author: michaelcourcy
 image: '/images/posts/2024-01-12-kasten-openshift-monitoring/monitoring.jpg'
