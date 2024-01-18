@@ -57,7 +57,7 @@ thanos-ruler-user-workload-1           3/3     Running   0          7h23m
 
 # Accessing the metrics from outside the cluster 
 
-This part of the [Openshift documentation](https://docs.openshift.com/container-platform/4.12/monitoring/enabling-monitoring-for-user-defined-projects.html#accessing-metrics-from-outside-cluster_enabling-monitoring-for-user-defined-projects) show how to access metrics from outside the cluster using curl.
+This part of the [OpenShift documentation](https://docs.openshift.com/container-platform/4.12/monitoring/enabling-monitoring-for-user-defined-projects.html#accessing-metrics-from-outside-cluster_enabling-monitoring-for-user-defined-projects) shows how to access metrics from outside the cluster using curl.
 
 ```
 SECRET=`oc get secret -n openshift-user-workload-monitoring | grep  prometheus-user-workload-token | head -n 1 | awk '{print $1 }'`
