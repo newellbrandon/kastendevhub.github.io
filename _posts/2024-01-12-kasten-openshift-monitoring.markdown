@@ -795,7 +795,7 @@ sum(container_memory_working_set_bytes{namespace='kasten-io',container="",pod!="
 
 If not then you are passing the treshold.
 
-The same apply for cpu :
+The same can apply for Kasten's cpu usage as well:
 
 ```
 namespace:container_cpu_usage:sum{namespace='kasten-io'}
