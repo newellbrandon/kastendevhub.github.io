@@ -16,7 +16,7 @@ featured:
 Most of the time, before you start to add Kasten to openshift there is already an ITSM stack in the company which is working with openshift monitoring. All you want to do is include Kasten in Openshift Monitoring to leverage this ITSM stack.
 
 Hence we often have two requests from our customers : 
-- how do I expose Kasten metrics from an external service like Zabbix or Dynatrace
+- How do I expose Kasten metrics from an external service like Zabbix or Dynatrace?
 - how do I add kasten metrics in the global openshift monitoring. 
 
 In this tutorial I'm going to show : 
