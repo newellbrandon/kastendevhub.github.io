@@ -11,7 +11,7 @@ featured:
 ---
 # Using openshift monitoring for Kasten
 
-[Openshift monitoring](https://docs.openshift.com/container-platform/4.12/monitoring/monitoring-overview.html) allow you to monitor user metrics, and allow external services like Zabbix or Dynatrace to access those metrics in a secure way. 
+[OpenShift monitoring](https://docs.openshift.com/container-platform/4.12/monitoring/monitoring-overview.html) allows you to monitor user metrics, and allow external services like Zabbix or Dynatrace to access those metrics in a secure way. 
 
 Most of the time, before you start to add Kasten to openshift there is already an ITSM stack in the company which is working with openshift monitoring. All you want to do is include Kasten in Openshift Monitoring to leverage this ITSM stack.
 
