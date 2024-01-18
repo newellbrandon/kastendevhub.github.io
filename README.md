@@ -1,6 +1,6 @@
 # Veeam Kasten DevHub
 
-Welcome to the Veeam Kasten DevHub site. This site is intended to serve as a publicly-accessible web property where engineers, architects, partners, and others can share their experiences, tips, tricks, guides, recipes, etc around implementing, managing, integrating, and enhancing Kasten K10. Note that nothing proprietary, forward-facing, or otherwise non-public knowledge should be published via this site. Any official announcements, support documentation, knowledge base articles or release notes should be published via official channels
+Welcome to the Veeam Kasten DevHub site. This site is intended to serve as a publicly-accessible web property where engineers, architects, partners, and others can share their experiences, tips, tricks, guides, recipes, etc around implementing, managing, integrating, and enhancing Kasten K10. Note that nothing proprietary, forward-facing, or otherwise non-public knowledge should be published via this site. Any official announcements, support documentation, knowledge base articles or release notes should be published via official channels.
 
 ## Getting Started
 
@@ -26,11 +26,11 @@ The `author` variable accepts multiple authors, each author will get a post coun
 
 The script `./new_draft_post.sh` leverages [_drafts/_template.md](_drafts/_template.md) and has an example of multiple authors.
 
-#### Early Publishing and Unpublishing
+#### Scheduled Publishing and Unpublishing
 
-__NOT TESTED:__ You can set the publishing `date` variable for the future, but because we do not have a schedule publishing job, it will go out with the next publish operation after that date.
+__NOT TESTED:__ You can set the publishing `date` variable for the future, but currently, there is no scheduled publishing job; so it will go out with the next publish operation and appear after that date.
 
-You can unpublish or hide posts (temporarily or forever) by setting the variable `published: false` and review them locally with the `bundle exec jekyll server --unpublished` flag. They remain in git history of this repository.
+You can unpublish or hide posts (temporarily or forever) by setting the variable `published: false` and review them locally with the `bundle exec jekyll server --unpublished` flag. Unpublished posts remain in the repository.
 
 ### Pages
 
@@ -51,7 +51,7 @@ Pages can be either Markdown or HTML, saved to the `_pages` directory. Pages gen
 3. Make changes and [test locally](#testing-locally-1); when ready, `git commit` and `git push` your fork
 4. Submit a Pull Request and add at least one peer reviewer
 
-Every commit or merged PR triggers a GitHub action to render the site for the production environment (omitting `_drafts` and `published: false`), updating GitHub pages.
+Every commit or merged PR triggers a GitHub action to render the site for the production environment (omitting `_drafts` and hiding navigation? to `published: false`), which updates GitHub pages.
 
 ### Testing Locally
 
