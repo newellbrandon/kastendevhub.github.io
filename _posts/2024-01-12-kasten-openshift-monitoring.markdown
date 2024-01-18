@@ -793,7 +793,7 @@ sum(container_memory_working_set_bytes{namespace='kasten-io',container="",pod!="
 }
 ```
 
-If not then you are passing the treshold.
+Otherwise, you know that Kasten is exceeding the 3Gb threshold.
 
 The same can apply for Kasten's cpu usage as well:
 
