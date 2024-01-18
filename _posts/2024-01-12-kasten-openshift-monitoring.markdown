@@ -808,7 +808,7 @@ curl -X GET -kG "https://$THANOS_QUERIER_HOST/api/v1/query?" --data-urlencode "q
 
 # Conclusion 
 
-Thanks to Service Monitor it's easy to integrate kasten metrics into openshift monitoring and make sure that metrics and alert on kasten-io will be used consistently within the company. 
+Thanks to Prometheus ServiceMonitor, it's easy to integrate Kasten metrics into OpenShift monitoring and ensure that metrics and alerts on kasten-io will be accessible and visible to your organization.
 
 
 
