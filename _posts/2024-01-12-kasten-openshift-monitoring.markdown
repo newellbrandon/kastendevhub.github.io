@@ -739,7 +739,7 @@ When a restore point is retired the corresponding backup action is also retired,
 
 # Capturing Other Interesting Failures
 
-You can use the Kasten grafana dashboard to obtain other interesting alert 
+It's worth noting that Kasten deploys an instance of Grafana when it is installed. You can use the Kasten Grafana dashboard to obtain other interesting alerts.
 
 ## Not using more than 50 % of catalog pvc 
 For instance, perhaps you want to generate an alert if your cluster's storage is over 50% utilized:
