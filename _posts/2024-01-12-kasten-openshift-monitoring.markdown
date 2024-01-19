@@ -185,7 +185,7 @@ While this particular metric is of little interest, it is a good example and hop
 
 ## What is a ServiceMonitor
 
-A ServiceMonitor is a custom resource that participate to the configuration of Prometheus.
+A ServiceMonitor is a custom resource that composes part of a Prometheus configuration.
 It is used to define an application you wish to scrape metrics from within Kubernetes. The controller will use the information in the ServiceMonitor object to automatically build the required Prometheus configuration.
 
 ## The authorization to create a ServiceMonitor
@@ -329,7 +329,7 @@ If you get a response, it means that you've successfully allowed communication t
 
 ## Create a Service Monitor 
 
-Now let's create a service monitor for the catalog 
+Now let's create a service monitor for the catalog. We do that for this specific component because it's the catalog that publish the metrics about kasten actions. There is other metrics published by other Kasten components but the catalog hold the most important from an operation standpoint.
 
 ```
 cat<<EOF | oc create -f -
@@ -733,9 +733,9 @@ Even long after the backup failure if you execute the request
 "query=increase(catalog_actions_count{policy='mcourcy-pacman-backup',status='failed'}[10m])"
 ```
 
-You'll notice the dates are still recent and within the last 10 minutes, despite the failure having occurred in the past. The catalog will continue to publish the metrics or the actions, and prometheus continue to scrape them. 
+You'll notice the dates are still recent and within the last 10 minutes, despite the failure having occurred in the past. The catalog will continue to publish the metrics or the actions, and prometheus continue to scrape them.
 
-This is because backup actions has not been removed and will be removed after the restorepoint will be removed.
+When a restore point is retired the corresponding backup action is also retired, but when a backup action failed there is no restore point. In this case the failed backup action will remain until retired by the [global garbage collector](https://docs.kasten.io/latest/operating/garbagecollector.html).
 
 # Capturing Other Interesting Failures
 
