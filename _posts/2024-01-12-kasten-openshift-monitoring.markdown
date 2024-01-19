@@ -6,7 +6,7 @@ date: 2024-01-12 10:17:00 +0000
 author: michaelcourcy
 image: '/images/posts/2024-01-12-kasten-openshift-monitoring/monitoring.jpg'
 image_caption: 'Using Openshift monitoring for Kasten'
-tags: [Tutorial, Monitoring, Backup, Prometheus, Thanos]
+tags: [Tutorial, Monitoring, Backup, Openshift, Prometheus, Thanos]
 featured:
 ---
 # Using openshift monitoring for Kasten
@@ -678,7 +678,7 @@ From an alerting point of view, what you need to do at the end is to capture whe
 increase(catalog_actions_count{status='failed'}[10m])>0
 ```
 
-This expression is a binary selector selector, if it evaluates to true it will return the instant vector that satifie the condition `> 0`.
+This expression is a binary selector selector, if it evaluates to true it will return the instant vector that satifies the condition `> 0`.
 
 ```
 {
