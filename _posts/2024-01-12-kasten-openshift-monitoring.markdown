@@ -508,7 +508,7 @@ gdate -d @1705076841.476
 Fri Jan 12 17:27:21 CET 2024
 ```
 
-The date and time should be the date and time of the failed backup. The number `2` is because we have a failed backup action and also a failed runaction because we trigger the backup action from a policy.
+The date and time should be the date and time of the failed backup. The number `2` in the earlier response is because we have a failed backup action and also a failed runaction because we trigger the backup action from a policy.
 
 Now try the same query but add a range selector of 10 minutes : 
 
