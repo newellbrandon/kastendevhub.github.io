@@ -750,7 +750,7 @@ For instance, perhaps you want to generate an alert if your cluster's storage is
 If the result is empty you are under 50%.
 
 ## Evaluating the quantity of memory and CPU used by kasten-io 
-
+Another useful monitor may be monitoring the amount of compute consumed by resources in the kasten-io namespace.  This can help us size our cluster appropriately and monitor resource utilization over time as we increase or decrease the number of applications, replicas, etc being backed up by Kasten.
 ```
 sum(container_memory_working_set_bytes{namespace='kasten-io',container="",pod!=""}) BY (namespace)
 ```
