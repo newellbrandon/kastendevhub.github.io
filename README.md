@@ -77,7 +77,7 @@ fi
 
 Then just source the updated file (e.g.: `source ~/.zprofile` or `~/.bash_profile`)
 
-Alternatively, use the [rbenv](https://github.com/rbenv/rbenv) environment manager (optionally installed via [anyenv](https://anyenv.github.io/) which has the benefits of not installing Brew's `ruby` or `rbenv` and having to manage Gem upgrade dependencies, because it compiles and installs Ruby+Gems per enviroment to avoid system or Brew upgrade conflicts). To determine the latest stable Ruby release, check https://www.ruby-lang.org/en/downloads/.
+Alternatively, use the [rbenv](https://github.com/rbenv/rbenv) environment manager (optionally installed via [anyenv](https://anyenv.github.io/) which has the benefits of not installing Brew's `ruby` or `rbenv` and having to manage Gem upgrade dependencies, because it compiles and installs Ruby+Gems per environment to avoid system or Brew upgrade conflicts). To determine the latest stable Ruby release, check https://www.ruby-lang.org/en/downloads/.
 
 ```bash
 brew install anyenv libyaml \
@@ -99,8 +99,8 @@ bundle install # should install to local, not global or system Ruby
 #### Testing Locally
 
 1. Within a terminal, navigate to the source for the site.
-2. Run `bundle install` to install the Ruby gem depenencies.
-3. Run `bundle exec jekyll serve --baseurl='' --livereload --open-url &`
+2. Run `bundle install` to install the Ruby gem dependencies.
+3. Run `bundle exec jekyll serve --baseurl='' --drafts --livereload --open-url &`
 
 ## Resources
 
