@@ -112,4 +112,5 @@ In addition to Markdown, the site is built on a number of underlying technologie
   - [Dann Jekyll Theme](https://dann-jekyll.netlify.app/)
   - [Jekyll Liquid templating](https://jekyllrb.com/docs/liquid/)
   - [Jekyll server CLI options](https://jekyllrb.com/docs/configuration/options/#serve-command-options), such as `--drafts`
+  - [Jekyll-tabs](https://github.com/Ovski4/jekyll-tabs#usage)
 - [Installing Ruby on Mac OSX](https://mac.install.guide/ruby/13.html)
