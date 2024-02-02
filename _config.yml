@@ -14,6 +14,7 @@ permalink: /:title
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-tabs
 
 paginate: 6
 paginate_path: "/page/:num"

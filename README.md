@@ -1,6 +1,6 @@
 # Veeam Kasten DevHub
 
-Welcome to the Veeam Kasten DevHub site. This site is intended to servce as a publicly-accessible web property where engineers, architects, partners, and others can share their experiences, tips, tricks, guides, recipes, etc around implementing, managing, integrating, and enhancing Kasten K10. Note that nothing proprietary, forward-facing, or otherise non-public knowledge should be published via this site. Any official announcements, support documentation, knowledge base articles or release notes should be published via official channels
+Welcome to the Veeam Kasten DevHub site. This site is intended to serve as a publicly-accessible web property where engineers, architects, partners, and others can share their experiences, tips, tricks, guides, recipes, etc around implementing, managing, integrating, and enhancing Kasten K10. Note that nothing proprietary, forward-facing, or otherwise non-public knowledge should be published via this site. Any official announcements, support documentation, knowledge base articles or release notes should be published via official channels.
 
 ## Getting Started
 
@@ -8,11 +8,33 @@ Kasten DevHub is produced with a [Static Site Generator](https://en.wikipedia.or
 
 ### Blog Posts
 
-Blog posts are individual markdown files with the name format of `YYYY-MM-DD-blog-title.markdown` and are stored in the `_posts` directory. Any images or media referenced by those posts should be saved to `images/posts/` It is ideal to minimize image file size for quick web page loading and mantaining this repository's capacity quota.
+Blog posts are individual markdown files with the name format of `YYYY-MM-DD-title-name.markdown` in the `_posts` directory; using a file suffix of `.md` also works.
+
+Start by creating your `_authors/yourname.md` biography description with a `images/yourname_headshot.suffix`.
+
+### Markdown: Front Matter
+
+https://jekyllrb.com/docs/front-matter/ defines global variables: `layout` and `published` and custom variables used for posts: `date` and `tags`, we don't use `categories` yet. The remaining variables are defined by the Theme, such as: `author` (which should match `_authors/yourname.md`), `image_caption`, etc.
+
+Any `image` or media referenced by posts should be saved to `images/posts/` It is ideal to minimize image file size for quick web page loading and maintaining this repository's capacity quota.
+
+#### Drafts and Multiple Authors
+
+You can actively iterate and/or collaborate by making a post in the `_drafts` folder, omitting a filename date prefix, and reviewing with the `bundle exec jekyll server --drafts` flag. Drafts are not generated for the production environment, but they will exist in this public git repository when part of a push, PR, etc. Promote by `git mv _drafts/YOURPOST.md _posts/DATE-YOURPOST.md` and make a pull request when ready.
+
+The `author` variable accepts multiple authors, each author will get a post count credit and link, but the author icon will show the admin.
+
+The script `./new_draft_post.sh` leverages [_drafts/_template.md](_drafts/_template.md) and has an example of multiple authors.
+
+#### Scheduled Publishing and Unpublishing
+
+__NOT TESTED:__ You can set the publishing `date` variable for the future, but currently, there is no scheduled publishing job; so it will go out with the next publish operation and appear after that date.
+
+You can unpublish or hide posts (temporarily or forever) by setting the variable `published: false` and review them locally with the `bundle exec jekyll server --unpublished` flag. Unpublished posts remain in the repository.
 
 ### Pages
 
-Pages can be either markdown or HTML, saved to the `_pages` directory
+Pages can be either Markdown or HTML, saved to the `_pages` directory. Pages generally are used for site-wide resources, e.g.: About, Authors, Contact, Tags, etc.
 
 ### Contributing
 
@@ -26,10 +48,10 @@ Pages can be either markdown or HTML, saved to the `_pages` directory
     git fetch upstream && git diff upstream/master && git merge upstream/master
     ```
 
-3. Make changes and [test locally](#testing-locally-1); when ready, git commit and push your fork
+3. Make changes and [test locally](#testing-locally-1); when ready, `git commit` and `git push` your fork
 4. Submit a Pull Request and add at least one peer reviewer
 
-Upon every commit/merged PR, Github pages automatically triggers a GitHub action to render the site.
+Every commit or merged PR triggers a GitHub action to render the site for the production environment (omitting `_drafts` and hiding navigation? to `published: false`), which updates GitHub pages.
 
 ### Testing Locally
 
@@ -55,7 +77,7 @@ fi
 
 Then just source the updated file (e.g.: `source ~/.zprofile` or `~/.bash_profile`)
 
-Alternatively, use the [rbenv](https://github.com/rbenv/rbenv) environment manager (optionally installed via [anyenv](https://anyenv.github.io/) which has the benefits of not installing Brew's `ruby` or `rbenv` and having to manage Gem upgrade dependencies, because it compiles and installs Ruby+Gems per enviroment to avoid system or Brew upgrade conflicts). To determine the latest stable Ruby release, check https://www.ruby-lang.org/en/downloads/.
+Alternatively, use the [rbenv](https://github.com/rbenv/rbenv) environment manager (optionally installed via [anyenv](https://anyenv.github.io/) which has the benefits of not installing Brew's `ruby` or `rbenv` and having to manage Gem upgrade dependencies, because it compiles and installs Ruby+Gems per environment to avoid system or Brew upgrade conflicts). To determine the latest stable Ruby release, check https://www.ruby-lang.org/en/downloads/.
 
 ```bash
 brew install anyenv libyaml \
@@ -77,8 +99,8 @@ bundle install # should install to local, not global or system Ruby
 #### Testing Locally
 
 1. Within a terminal, navigate to the source for the site.
-2. Run `bundle install` to install the Ruby gem depenencies.
-3. Run `bundle exec jekyll serve --baseurl='' --livereload --open-url &`
+2. Run `bundle install` to install the Ruby gem dependencies.
+3. Run `bundle exec jekyll serve --baseurl='' --drafts --livereload --open-url &`
 
 ## Resources
 
@@ -90,4 +112,5 @@ In addition to Markdown, the site is built on a number of underlying technologie
   - [Dann Jekyll Theme](https://dann-jekyll.netlify.app/)
   - [Jekyll Liquid templating](https://jekyllrb.com/docs/liquid/)
   - [Jekyll server CLI options](https://jekyllrb.com/docs/configuration/options/#serve-command-options), such as `--drafts`
+  - [Jekyll-tabs](https://github.com/Ovski4/jekyll-tabs#usage)
 - [Installing Ruby on Mac OSX](https://mac.install.guide/ruby/13.html)
