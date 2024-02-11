@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: Migration of virtual machines from VMware to OpenShift 4
 description: In this blog post, we look at how to migrate from VMware Virtual Machines to Openshift Virtualisation
