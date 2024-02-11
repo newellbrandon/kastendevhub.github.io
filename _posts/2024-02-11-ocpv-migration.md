@@ -23,7 +23,7 @@ The test migration setup I am using is as follows:
  - RedHat Migration Toolkit for Virtualisation (MTV) Operator
  - Kasten K10 Operator
 
-![enter image description here](images/posts/2024-02-11/2.png)
+![enter image description here](/images/posts/2024-02-11/2.png)
 
 The test VM is configured with a static IP address and includes the nginx web server.
 
