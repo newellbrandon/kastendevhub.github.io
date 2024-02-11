@@ -7,7 +7,7 @@ author: jamestate
 image: '/images/posts/2024-02-11-ocpv-migration/ocpv.png'
 image_caption: 'Migrate to Openshift using MTV'
 tags: [vmware, migration, openshift, mtv operator, kasten, ocp-v]
-featured:
+featured: false
 ---
 
 ## Overview
