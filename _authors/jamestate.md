@@ -1,7 +1,7 @@
 ---
 username: jamestate
 name: James Tate
-image: '/images/jamestate_headshot.png'
+image: '/images/jamestate_headshot.jpg'
 linkedin: https://www.linkedin.com/in/jdtate101/
 github: https://github.com/jdtate101
 ---
