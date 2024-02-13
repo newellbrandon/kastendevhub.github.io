@@ -205,7 +205,7 @@ If we do the same to test the web server exposure, we can fire up a web browser 
 
     http://<loadbalancer IP>:31362
     
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/40.png)
+![Verify Port is Exposed](/images/posts/2024-02-11-ocpv-migration/40.png)
 
 Obviously you could just expose the http as a ClusterIP then create and link an openshift route to the http service in the VM namespace, which will then negate the need for the use of the port in any URL.
 
