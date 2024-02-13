@@ -175,7 +175,7 @@ One thing that will change in our specific test migration scenario is that we ar
 
 The name of the network adapter has also changed as part of the translation. This is because we are now using a virtio network adapter, rather than the vmxnet3 adapter. Thus the network adapter has changed from ens160 to enp1s0. We need to change the netplan file to reflect these changes (as root):
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/36.png)
+![Change netplan for new network adapter](/images/posts/2024-02-11-ocpv-migration/36.png)
 
 We then need to apply this change with (as root):
 
