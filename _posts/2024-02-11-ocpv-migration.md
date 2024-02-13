@@ -216,7 +216,17 @@ Most linux distributions ship with the open-vmware agent, the open source altern
     sudo apt install qemu-guest-agent
     sudo systemctl enable qemu-guest-agent
     sudo systemctl start qemu-guest-agent
- 
+
+### Block Mode Exports For Kasten
+
+Kasten has the ability to export data from snapshots in BLOCK mode, which basically means it can recognise and take advantage of change block tracking. This is vewry advantagous on large PVC's (like virtual disks of VMs) as it can significantly speed up the export process by only copying the changes data since the last export. The initial export will always be a full copy. In order for Kasten to recognise and use this ability, we  have to do two things:
+
+- Firstly we need to add an annotation to the storage class: kubectl annotate storageclass ${STORAGE_CLASS_NAME} k10.kasten.io/sc-supports-block-mode-exports=true
+- Secondly on the Kasten policy for the backup there is an option to use block export that needs to be enabled.
+
+Enabling both there settings will ensure your VM backups are processed efficently.
+
+More information about this feature can be found on our docs website [here](https://docs.kasten.io/latest/usage/protect.html#block-mode-export)
 
 # Conclusion
 
