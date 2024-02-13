@@ -103,7 +103,7 @@ StorageMapping is complete.
 
 ### Setting up the Plan
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/16.png)
+![Setting up the Plan](/images/posts/2024-02-11-ocpv-migration/16.png)
 
 Click Create Plan. Give the plan a name, select the source and target providers and select the namespace you wish to migrate the VM into. It's best to have this setup prior to creation of the plan:
 
