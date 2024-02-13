@@ -113,7 +113,7 @@ Click Create Plan. Give the plan a name, select the source and target providers 
 
 Click next and select the correct VMware infrastructure for the source VM's:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/18.png)
+![Select VMware infrastructure source](/images/posts/2024-02-11-ocpv-migration/18.png)
 
 Select the VM you wish to migrate. Note that MTV will warn you of any issues that will prevent machines from being migrated. The most obvious of which is that the machine name cannot contain capital letters. Select the VM or VM's you wish to migrate then click next.
 
