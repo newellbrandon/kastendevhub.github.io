@@ -26,7 +26,7 @@ The test migration setup I am using is as follows:
  - VMware ESXi 7.0u2 with vCentre 7
  - OpenShift 4.13.13 with rook-ceph CSI storage
  - Ubuntu 22.04 LTS test VM (with 20GB vmdk)
- - RedHat Virtualisation Operator
+ - [RedHat Virtualisation Operator](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.13/html/virtualization/installing#virt-installing-virt-operator_installing-virt-web)
  - RedHat Migration Toolkit for Virtualisation (MTV) Operator
  - Kasten K10 Operator
 
