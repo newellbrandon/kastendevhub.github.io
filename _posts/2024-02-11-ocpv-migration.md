@@ -134,7 +134,7 @@ Select the migration type you wish to use...either Warm (online) or cold (offlin
 {: .alert-info }
 Note that for warm migrations to work you will need to enable **change block tracking** for each VM. This can be accomplished by setting the option in the advanced settings per VM. This can **only** be done when the VM is powered off:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/20.png)
+![Edit VM Settings in vCenter for Change Block Tracking](/images/posts/2024-02-11-ocpv-migration/20.png)
 
 Edit the **Configuration Parameters** by clicking "**Edit Configuration**" and add the following setting/value statement:
 
