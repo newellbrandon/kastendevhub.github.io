@@ -163,7 +163,7 @@ Once started it will take a while to work through the translation and data migra
 
 Once the plan is complete it will display all green and start the VMs:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/33.png)
+![Completed Migration Plan](/images/posts/2024-02-11-ocpv-migration/33.png)
 
 You can now find the VM under **Virtualisation** in the lefthand menu. Click on your migrated VM and you can see the deployment and serial console options:
 
