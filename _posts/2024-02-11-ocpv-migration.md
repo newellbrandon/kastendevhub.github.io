@@ -49,7 +49,7 @@ Once we open up the side panel, you will see 4 new items... Providers, Plans, Ne
  3. NetworkMaps - Here we detail how we are going to address the networking translation, eg VM Network to Openshift network layers
  4. StorageMap - Lastly we detail how we map the individual ESXi data stores to the cluster CSI storage classes.
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/3.png)
+![Migration Toolkit for Virtualization](/images/posts/2024-02-11-ocpv-migration/3.png)
 
 ### Providers
 
