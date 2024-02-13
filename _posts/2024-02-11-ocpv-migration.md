@@ -199,7 +199,7 @@ You can then confirm you have ssh access to the VM (using our example from above
 
     ssh -p 30190 <username>@<loadbalancer IP>
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/39.png) 
+![Verify SSH Connectivity](/images/posts/2024-02-11-ocpv-migration/39.png) 
 
 If we do the same to test the web server exposure, we can fire up a web browser and go to:
 
