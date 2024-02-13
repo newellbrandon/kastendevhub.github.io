@@ -109,7 +109,7 @@ Click Create Plan. Give the plan a name, select the source and target providers 
 
     oc create ns <vm namespace name>
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/17.png)
+![Plan General Settings](/images/posts/2024-02-11-ocpv-migration/17.png)
 
 Click next and select the correct VMware infrastructure for the source VM's:
 
