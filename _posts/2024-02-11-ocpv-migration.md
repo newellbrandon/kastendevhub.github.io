@@ -57,7 +57,7 @@ Once we open up the side panel, you will see 4 new items... Providers, Plans, Ne
 
 Click create a new provider. We add a provider for VMware:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/5.png)
+![Select Provider Type](/images/posts/2024-02-11-ocpv-migration/5.png)
 
 Fill out the options, each entry will turn green once the format is correct:
 
