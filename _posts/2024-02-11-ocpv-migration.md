@@ -40,7 +40,7 @@ NOTE: In order for Openshift Virtualisation to work it needs access to the hyper
 ## Setup & Migration
 Once you have both Red Hat operators installed from the operator hub, you will notice two new side menu options in the main portal, Virtualisation and Migration.
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/1.png)
+![Red Hat OpenShift Console](/images/posts/2024-02-11-ocpv-migration/1.png)
 We will start with the Migration (we will use the Virtualisation later on).
 Once we open up the side panel, you will see 4 new items... Providers, Plans, NetworkMaps and StorageMaps. All these must be configured to process a successful migration.
 
