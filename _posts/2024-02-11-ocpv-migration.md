@@ -125,7 +125,7 @@ Select the exiting network mapping you made previously, then click next:
  
  Select the existing storage mapping you made previously, then click next:
  
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/24.png)
+![Select Existing StorageMap](/images/posts/2024-02-11-ocpv-migration/24.png)
 
 Select the migration type you wish to use...either Warm (online) or cold (offline), then click next:
 
