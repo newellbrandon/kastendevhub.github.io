@@ -222,6 +222,6 @@ Most linux distributions ship with the open-vmware agent, the open source altern
 
 Not only it it easy to migrate from VMware to OCP-V using MTV, but it's entirely supported by RedHat and can be used for both online & offline migrations. If you specifically create and map an external network on the Openshift cluster with the same CIDR range you don't even have to change any networking. It's a great tool to power any move away from VMware and onto a unified platform for both VM's and containers. Better yet, those newly migrated VM's can be protected by Kasten K10, allowing full backup/restore, DR and application mobility capabilities.
 
-In fact there is already a demo of this process on one of our other blog posts:
+In fact there is already a demo of this process on one of our other [blog posts](https://veeamkasten.dev/ocpv-kasten-demo)
 
 https://veeamkasten.dev/ocpv-kasten-demo
