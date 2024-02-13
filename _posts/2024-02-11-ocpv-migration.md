@@ -142,7 +142,7 @@ Edit the **Configuration Parameters** by clicking "**Edit Configuration**" and a
 
 Next we can enter any hooks for Ansible scripts to run post migration automation. We are going to skip this step, click next:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/26.png)
+![Add hooks to the plan](/images/posts/2024-02-11-ocpv-migration/26.png)
 
 Lastly we get presented with a summary of our config, click Finish to confirm the migration setup:
 
