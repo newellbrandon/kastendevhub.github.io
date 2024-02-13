@@ -150,7 +150,7 @@ Lastly we get presented with a summary of our config, click Finish to confirm th
 
 We are now ready to start the migration...click START on the plan:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/28.png)
+![Start Migration](/images/posts/2024-02-11-ocpv-migration/28.png)
 
 ## Migration Progress
 You can expand the drop down for the VM to reveal the stages and progress:
