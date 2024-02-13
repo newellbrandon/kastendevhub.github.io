@@ -11,7 +11,7 @@ featured: false
 ---
 
 ## Overview
-With the ongoing controversy around Broadcom's acquisition of VMWare and subsequent changes to pricing and partner eco-systems, many customer are looking at their options around their virtualisation provider. Most solid alternatives consist of the same type 2 hypervisor technology, products such as Nutanix, Hyper-V and Proxmox.
+With the ongoing controversy around Broadcom's acquisition of VMware and subsequent changes to pricing and partner eco-systems, many customer are looking at their options around their virtualisation provider. Most solid alternatives consist of the same type 2 hypervisor technology, products such as Nutanix, Hyper-V and Proxmox.
 
 However there is an alternative that many cloud native enterprises are now looking towards...KubeVirt.
 
