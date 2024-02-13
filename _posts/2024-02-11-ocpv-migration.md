@@ -121,7 +121,7 @@ Select the VM you wish to migrate. Note that MTV will warn you of any issues tha
 
 Select the exiting network mapping you made previously, then click next:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/23.png)
+![Select Existing NetworkMap](/images/posts/2024-02-11-ocpv-migration/23.png)
  
  Select the existing storage mapping you made previously, then click next:
  
