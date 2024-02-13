@@ -83,7 +83,7 @@ Your provider is now complete.
 
 ### NetworkMap
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/10.png)
+![NetworkMap](/images/posts/2024-02-11-ocpv-migration/10.png)
 
 Click on Create NetworkMap. Use a sensible name for the mapping name, pick your source and destination providers (host will always be the destination name for openshift...it can't be changed), then finally map the VMware networks to the openshift networks.
 
