@@ -69,7 +69,7 @@ For the SSHA-1 fingerprint you will need to SSH into the Vcenter appliance and g
 
 Once you have enabled the shell access, SSH into the vcenter appliance and type the command **shell** to get to the cmdline:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/6.png)
+![SSH vCenter Appliance](/images/posts/2024-02-11-ocpv-migration/6.png)
 
 Once there enter the following command:
 
