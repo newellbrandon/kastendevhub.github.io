@@ -193,7 +193,7 @@ We can then expose SSH with the following command:
 
 This will create the ssh service in the VM namespace. We can do the same for the nginx on port 80:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/38.png)
+![Expose Pod Port](/images/posts/2024-02-11-ocpv-migration/38.png)
 
 You can then confirm you have ssh access to the VM (using our example from above):
 
