@@ -93,7 +93,7 @@ NetworkMapping is complete.
 
 ### StorageMap
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/12.png)
+![StorageMap](/images/posts/2024-02-11-ocpv-migration/12.png)
 
 Click Create StorageMap. Use a sensible name for the mapping name, pick your source and destination providers, then finally map the ESXi data stores to the openshift CSI storage.
 
