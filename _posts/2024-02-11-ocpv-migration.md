@@ -61,7 +61,7 @@ Click create a new provider. We add a provider for VMware:
 
 Fill out the options, each entry will turn green once the format is correct:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/9.png)
+![vCenter Connection Parameters](/images/posts/2024-02-11-ocpv-migration/9.png)
 
 For the SSHA-1 fingerprint you will need to SSH into the Vcenter appliance and get access to the shell. Shell access is usually only granted from the appliance service web console:
 
