@@ -77,7 +77,7 @@ Once there enter the following command:
 
 This will output the SHA1 fingerprint:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/8.png)
+![vCenter SHA1 Fingerprint](/images/posts/2024-02-11-ocpv-migration/8.png)
 
 Your provider is now complete.
 
