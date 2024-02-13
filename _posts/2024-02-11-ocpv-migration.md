@@ -117,7 +117,7 @@ Click next and select the correct VMware infrastructure for the source VM's:
 
 Select the VM you wish to migrate. Note that MTV will warn you of any issues that will prevent machines from being migrated. The most obvious of which is that the machine name cannot contain capital letters. Select the VM or VM's you wish to migrate then click next.
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/19.png)
+![Select the VM to Migrate](/images/posts/2024-02-11-ocpv-migration/19.png)
 
 Select the exiting network mapping you made previously, then click next:
 
