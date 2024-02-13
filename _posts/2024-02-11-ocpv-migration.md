@@ -34,6 +34,7 @@ The test migration setup I am using is as follows:
 
 The test VM is configured with a static IP address and includes the nginx web server.
 
+{: .alert-info }
 NOTE: In order for Openshift Virtualisation to work it needs access to the hypervisor CPU extensions, either directly through the BIOS if using a Bare Metal install of Openshift or by enabling pass through hypervisor extensions in the CPU options of a VM's hardware settings if using Openshift inside a hypervisor. 
 
 ## Setup & Migration
