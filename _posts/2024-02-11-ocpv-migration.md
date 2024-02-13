@@ -155,7 +155,7 @@ We are now ready to start the migration...click START on the plan:
 ## Migration Progress
 You can expand the drop down for the VM to reveal the stages and progress:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/30.png)
+![Monitor Migration Progress](/images/posts/2024-02-11-ocpv-migration/30.png)
 
 Once started it will take a while to work through the translation and data migration. My test machine took 90mins to complete, but this will vary greatly depending upon CPU and speed of network and/or the disk subsystems on each end. The majority of time is spent analysing the VM OS and doing the required translations to make it containerised. If you wish to check on the progress in fine detail, go to the namespace (under **Projects**) and find the running pod and inspect the logs. You should see it stepping through the mapping process. 
 
