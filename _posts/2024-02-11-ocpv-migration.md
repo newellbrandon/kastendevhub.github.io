@@ -224,4 +224,3 @@ Not only it it easy to migrate from VMware to OCP-V using MTV, but it's entirely
 
 In fact there is already a demo of this process on one of our other [blog posts](https://veeamkasten.dev/ocpv-kasten-demo)
 
-https://veeamkasten.dev/ocpv-kasten-demo
