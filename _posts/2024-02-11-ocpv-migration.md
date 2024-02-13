@@ -146,7 +146,7 @@ Next we can enter any hooks for Ansible scripts to run post migration automation
 
 Lastly we get presented with a summary of our config, click Finish to confirm the migration setup:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/27.png)
+![Review the Migration Plan](/images/posts/2024-02-11-ocpv-migration/27.png)
 
 We are now ready to start the migration...click START on the plan:
 
