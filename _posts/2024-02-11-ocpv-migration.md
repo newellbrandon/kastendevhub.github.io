@@ -30,7 +30,7 @@ The test migration setup I am using is as follows:
  - [RedHat Migration Toolkit for Virtualisation (MTV) Operator](https://access.redhat.com/documentation/en-us/migration_toolkit_for_virtualization/2.5/html/installing_and_using_the_migration_toolkit_for_virtualization/installing-the-operator)
  - [Kasten K10 Operator](https://docs.kasten.io/latest/install/openshift/openshift.html)
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/2.png)
+![Installed OpenShift Operators](/images/posts/2024-02-11-ocpv-migration/2.png)
 
 The test VM is configured with a static IP address and includes the nginx web server.
 
