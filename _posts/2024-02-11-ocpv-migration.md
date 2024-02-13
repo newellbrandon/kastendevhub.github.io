@@ -53,7 +53,7 @@ Once we open up the side panel, you will see 4 new items... Providers, Plans, Ne
 
 ### Providers
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/4.png)
+![Openshift Migration Toolkit Providers](/images/posts/2024-02-11-ocpv-migration/4.png)
 
 Click create a new provider. We add a provider for VMware:
 
