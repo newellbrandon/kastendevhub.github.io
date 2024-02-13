@@ -138,7 +138,7 @@ Note that for warm migrations to work you will need to enable **change block tra
 
 Edit the **Configuration Parameters** by clicking "**Edit Configuration**" and add the following setting/value statement:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/21.png)
+![Set ctkEnabled to TRUE](/images/posts/2024-02-11-ocpv-migration/21.png)
 
 Next we can enter any hooks for Ansible scripts to run post migration automation. We are going to skip this step, click next:
 
