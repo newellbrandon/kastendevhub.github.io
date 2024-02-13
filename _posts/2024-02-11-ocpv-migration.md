@@ -131,6 +131,7 @@ Select the migration type you wish to use...either Warm (online) or cold (offlin
 
 ![enter image description here](/images/posts/2024-02-11-ocpv-migration/25.png)
 
+{: .alert-info }
 Note that for warm migrations to work you will need to enable **change block tracking** for each VM. This can be accomplished by setting the option in the advanced settings per VM. This can **only** be done when the VM is powered off:
 
 ![enter image description here](/images/posts/2024-02-11-ocpv-migration/20.png)
