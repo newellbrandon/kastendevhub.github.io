@@ -167,7 +167,7 @@ Once the plan is complete it will display all green and start the VMs:
 
 You can now find the VM under **Virtualisation** in the lefthand menu. Click on your migrated VM and you can see the deployment and serial console options:
 
-![enter image description here](/images/posts/2024-02-11-ocpv-migration/34.png)
+![Migrated VM Overview](/images/posts/2024-02-11-ocpv-migration/34.png)
 
 One thing that will change in our specific test migration scenario is that we are now using the POD network and thus, the static IP we had set on our VM will no longer work, we have to change it over to DHCP to pickup the cluster CNI DNS, POD CIDR range and gateway details. This can easily be done by editing the following file inside the Ubuntu VM:
 
