@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Navig8: A Data Management Solution for Kubernetes Helm Charts'
-description: In this interactive demo, see how quick and easy it is to deploy Kasten by Veeam via the Red Hat OpenShift Operator.
+description: Simplify and gain greater control over your helm deployments with Navig8.
 date: 2024-03-05 09:46:35 +0300
 author: mlavi
 image: '/images/posts/2024-03-05-navig8/navig8_header.webp'
