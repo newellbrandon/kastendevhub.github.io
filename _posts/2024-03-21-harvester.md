@@ -1,6 +1,5 @@
 ---
-author:
-  - mattslotten
+author: mattslotten
 date: 2024-03-21 16:21:37 +0100
 description: "Easily protect Suse Harvester VMs with Kasten K10 by Veeam"
 featured: false
