@@ -88,7 +88,7 @@ There's a few quick things we need to take care of first:
 1. Out of the box, Harvester PVC security contexts sets disk permissions to 0,0 (root, root), which is no bueno from a security perspective - really we want it to be at most 0,6 (root, disk), to allow pods set with the security context of RunAsNonRoot (i.e. the Kasten block data mover pods) to still be able to read the disk so it can export a backup.  The Harvester team is working on addressing this in their next release (hopefully in the next few weeks).
 2. Currently Harvester doesn't have any built in way to expose a service (i.e. the Kasten UI) outside of the cluster. The easiest workaround today is to just port-forward from the Kasten gateway pod to your local machine.
 ```
-k port-forward -n kasten-io $(k get pods -n kasten-io | grep gateway | awk '{print $1}') 8000:8000
+sudo kubectl port-forward -n kasten-io service/gateway 80:80
 ```
 Once done, you can access the Kasten dashboard by opening a browser and navigating to http://localhost:8000/k10/#. A slightly more elegant solution is to deploy an nginx reverse proxy on a VM within harvester to access the Kasten dashboard.
 3. While Harvester is mostly pure kubevirt, it does use a few bits behind the scenes to map disks to VMs.  One of these bits is an annotation on VM disks to "tell" Harvester which VM owns the disk.  This causes problems when we attempt a restore of a VM, as the Harvester admission webhook doesn't like it when trying to bring a VM online attached to a disk with an annotation telling it should be attached to another VM.  This can be overcome simply using a Kasten Transform, which removes the annotations upon restore:
