@@ -85,7 +85,7 @@ Note this is an additional step on top of the typical Kasten deployment to suppo
 Alright, now we're cooking! So we've got K10 deployed and our volumesnapshotclasses and snapshotclass annotated, we're ready to back up some VMs! Well not quite...
 
 There's a few quick things we need to take care of first:
-1. Out of the box, Harvester PVC security contexts sets disk permissions to 0,0 (root, root), which is no bueno from a security perspective - really we want it to be at most 0,6 (root, disk), to allow pods set with the security context of RunAsNonRoot (i.e. the Kasten block data mover pods) to still be able to read the disk so it can export a backup.  The Harvester team is working on addressing this in their next release (hopefully in the next few weeks).
+1. Out of the box, Harvester PVC security contexts sets disk permissions to 0,0 (root, root), which is no bueno from a security perspective - really we want it to be at most 0,6 (root, disk), to allow pods set with the security context of RunAsNonRoot (i.e. the Kasten block data mover pods) to still be able to read the disk so it can export a backup.  The Harvester team is working on addressing this in their next release (hopefully in the next few weeks). [Here](https://github.com/longhorn/longhorn/issues/8088) is the relevant GitHub issue to track progress.
 2. Currently Harvester doesn't have any built in way to expose a service (i.e. the Kasten UI) outside of the cluster. The easiest workaround today is to just port-forward from the Kasten gateway pod to your local machine.
 ```
 kubectl port-forward -n kasten-io service/gateway 8000:80
