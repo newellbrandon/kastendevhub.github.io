@@ -68,9 +68,8 @@ Wait a few minutes for Kasten to install. You can watch by running
   kubectl get pods -n kasten-io --watch
   ```
 
-Once all the pods are up, we're mostly the way there!  Next, let's ensure we annotate the Harvester (Longhorn) snapshot classes:
+Once all the pods are up, we're mostly the way there!  Next, let's ensure we annotate the Harvester (Longhorn) snapshot class:
   ```
-  kubectl annotate volumesnapshotclass longhorn k10.kasten.io/is-snapshot-class=true
   kubectl annotate volumesnapshotclass longhorn-snapshot k10.kasten.io/is-snapshot-class=true
   ```
 Next, we need to annotate our harvester-longhorn snapshot class so that Kasten K10 knows it supports blockmode PVC exports:
