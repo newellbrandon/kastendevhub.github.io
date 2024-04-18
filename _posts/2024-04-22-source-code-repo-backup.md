@@ -13,22 +13,22 @@ title: "Source Code Repository Backup"
 
 # Source Code repository backup 
 
-How important are your GitHub repositories? or any git based repositories such as GitLab, BitBucket etc. I would like to think that we either have the crown jewels in regards to company IP stowed in a repository as well as a load of hobby projects in our own repositories. All in all a pretty important selection of data, being hosted on these services, ultimately a SaaS service for your source code. 
+How important are your GitHub repositories? Or any git based repositories such as GitLab, BitBucket, etc. It's not entirely unlikely that we either have the crown jewels in regards to company intellectual property stowed in a repository as well as a load of hobby projects in our own repositories. All in all a pretty important selection of data, being hosted on these services, which can be thought of as a SaaS service for our or our organization's source code. 
 
-When we think about SaaS for example Microsoft 365, we know there is a shared responsibility model, Microsoft will keep the infrastructure up and running and make sure you have access to a certain SLA etc but the data is yours... if you decide to delete a mail or an item stored on your OneDrive then Microsoft are not going to help get your data back up and running. This is why we need to backup Microsoft 365... So what about GitHub, GitLab and BitBucket to name a few?
+When we think about SaaS for example Microsoft 365, we know there is a shared responsibility model - Microsoft will keep the infrastructure up and running and make sure you have access to a certain SLA etc but the data is yours... if you decide to delete an email or an item stored on your OneDrive, then Microsoft is under no obligation to help get your data back up and running. This is why we need to backup Microsoft 365... So what about GitHub, GitLab, and BitBucket to name a few?
 
-I am not in anyway picking on GitHub but all SaaS providers will have a terms of service so here is a link to the specifics for [GitHub](https://docs.github.com/en/site-policy/github-terms/github-corporate-terms-of-service)
+I am not in anyway picking on GitHub, rather all SaaS providers will have a terms of service, so here is a link to the specifics for [GitHub](https://docs.github.com/en/site-policy/github-terms/github-corporate-terms-of-service)
 
-A few things to be aware of is like any service account security is still vulnerable, you should protect this with MFA, but this is not a barrier against certain malicious activity, namely internal malice. 
+One thing worth noting is, like any service account, security is a concern. You should protect this with multi-factor authentication (MFA), but this is not a barrier against certain malicious activity, namely internal malice. 
 
-![](/images/posts/2024-04-22-source-code-repo-backup/1.jpg)
+![GitHub Terms of Service for Account Security](/images/posts/2024-04-22-source-code-repo-backup/1.jpg)
 
-We have named one area of risk but there are possibly others, 
+We have named one area of risk, but there are possibly others to consider:
 
-- What if the service is not available, probably not the end of the world, the data is safe providing things come back up. 
-- What is repositories suddenly become a paid for option only within your git based service. 
-- What if someone was able to gain access to code and make changes not captured and then software was then released to the public (probably extends the use case for source code repository backup)
-- What about a mistake in a developer workflow
+- What if the service is not available? Probably not the end of the world, the data is safe providing things come back up. 
+- What if repositories suddenly become a paid for option only within your git-based service?
+- What if someone was able to gain access to code and make changes not captured or tracked, and then software was then released to the public (probably extends the use case for source code repository backup)?
+- What about a mistake in a developer workflow?
 
 Hopefully you get the point I am trying to make, some people will also say well we have a copy of the code on our laptops. Do you really want to rely on that when bad things are or have happened? Can you be absolutely sure you have absolutely everything? All of them issues and wiki pages you have had for many years on your repositories?
 
@@ -36,19 +36,19 @@ Before we do move on, GitHub also have a page in their docs called [Backing up a
 
 # What are my options? 
 
-We could continue as normal and assume that my source code repository is just fine and nothing bad will happen to me. altnertavily maybe a `git clone --mirror https://github.com/EXAMPLE-USER/REPOSITORY.git` is a good enough. This approach is only going to get that source code not the wiki and other areas of the repository. 
+We could continue as normal and assume that my source code repository is just fine and nothing bad will happen to me. Alternatively, maybe a `git clone --mirror https://github.com/EXAMPLE-USER/REPOSITORY.git` is a good enough. This approach is only going to get that source code, not the wiki and other areas of the repository. 
 
 We could incorporate the above into a script and then let our backup tool of choice maybe pick that file up on a schedule, again this might be sufficient. 
 
 Maybe we could create another script that interacts with the API to again pull down the data we want to protect including the wiki, issues and discussions of our repository. Which then is picked up by a broader backup job. 
 
-Or in this post I am going to talk about how we can achieve this using Kasten plus a Kanister blueprint with an open source project called [gickup](https://github.com/cooperspencer/gickup).
+Or, perhaps the best option, we can protect our source code using Kasten plus a Kanister blueprint with an open source project called [gickup](https://github.com/cooperspencer/gickup).
 
 # The Goal
 
-I will say now that this is a work in progress and a look at the art of the possible of both Kanister blueprints and how this can be used to orchestrate other third party tools with Kasten to provide an orchestrated way to protect different workloads. 
+I will say now that this is a work-in-progress and a look at the art of the possible of both Kanister blueprints and how this can be used to orchestrate other third-party tools with Kasten to provide an orchestrated way to protect different workloads. 
 
-The goal of this project is to provide a template for using Gickup within a Kubernetes cluster and then leveraging Kasten K10 to orchestrate Source Code Repository backups to an Object Storage location of which this could be immutable.
+The goal of this project is to provide a template for using Gickup within a Kubernetes cluster and then leveraging Kasten K10 to orchestrate Source Code Repository backups to an Object Storage location, which can be immutable and thus protected from ransomware attacks.
 
 To achieve this we are going to create the following in our Kubernetes cluster, in a dedicated namespace.
 
@@ -119,7 +119,7 @@ spec:
           persistentVolumeClaim:
             claimName: gickup-pvc
 ```
-Next is the configmap, you will need to add your user, included repos (if none are added then all repos will be collected), you can also define how many copies you would like to keep within the Persistent Volume Claim and a logging option as well. 
+Next is the configmap, in which you will need to add your user, included repos (if none are added then all repos will be collected), as well as defining how many copies you would like to keep within the Persistent Volume Claim and a logging option as well. 
 ```
 apiVersion: v1
 kind: ConfigMap
@@ -151,7 +151,7 @@ data:
         maxage: 7 # keep logs for 7 days
 ```
 
-For this iteration we are still using a Deployment and PVC scenario and later on we will try and enhance this so that you do not need to have the pod running continously using built in Kanister functions to achieve this. 
+For this iteration we are still using a Deployment and PVC scenario and later on we will try and enhance this so that you do not need to have the pod running continously using built-in Kanister functions to achieve this. 
 
 ```
 apiVersion: v1
@@ -181,7 +181,7 @@ spec:
       storage: 1Gi
 ```
 
-Finally we have our secret, this for the example requires your github token. 
+Finally, create a secret, to store your github token. 
 
 ```
 apiVersion: v1
@@ -193,11 +193,11 @@ data:
   github-token:<add token here>
 ```
 
-Once you have those files with your details you can then deploy this to your cluster, for my testing I used a dedicated namespace called gickup for ease of management and also to be able to annotate later when it comes to the blueprint.
+Once you have those files with your details you can then deploy this to your cluster. For my testing I used a dedicated namespace called `gickup` for ease of management and also to be able to annotate later when it comes to the Kanister blueprint.
 
 # The Blueprint 
 
-Now with the above there is a native option within the Gickup configuration to use cron jobs however this will only provide the cability to send our backups to the PVC, with the blueprint we now have the ability to send those backups off to an immutable S3 or Object Storage location profile using Kasten. 
+Now with the above there is a native option within the Gickup configuration to use cron jobs, however this will only provide the capability to send our backups to the PVC. With the blueprint, we now have the ability to send those backups off-cluster to an immutable S3 or Object Storage location profile using Kasten. 
 
 The `gickup-blueprint-k10` file is shown below, 
 
@@ -257,3 +257,7 @@ actions:
 # Create the Backup Policy and Location Profile
 
 To finish this off you will need a location profile configured within Kasten and then create a policy that uses the gickup namespace. 
+
+# Conclusion
+
+Much like any SaaS solution, we need to be mindful of protecting our source code hosted "in the cloud." All too often, people and organizations alike place blind faith in SaaS providers that their data is being backed up and protected, however that often is very much not the case.
