@@ -3,7 +3,7 @@ author: michaelcade
 date: 2024-04-17 16:21:37 +0100
 description: "Do you use GitHub? Ever thought about backup or even shared responsibility"
 featured: false
-image: "/images/posts/"
+image: "/images/posts/images/posts/2024-04-22-source-code-repo-backup/source_code_repo_backup_header.webp"
 image_caption: "An important consideration for your source code backup"
 layout: post
 published: true
