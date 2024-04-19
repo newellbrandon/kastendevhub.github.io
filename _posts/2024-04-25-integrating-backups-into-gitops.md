@@ -228,7 +228,6 @@ git push
 ```
 now head on back to ArgoCD and sync again and see what damage it has done to our database. 
 
-Lets now take a look at the database state after making the mistake 
 
 ```
 mysql_pod=$(kubectl get po -n mysql -l app=mysql -o jsonpath='{.items[*].metadata.name}')
