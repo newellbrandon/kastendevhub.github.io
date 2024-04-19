@@ -313,7 +313,7 @@ USE test;
 SELECT * FROM pets;
 ```
 
-At this stage you will have your desired data in your database but peace of mind that you have a way of recovering if this accident happens again. 
+Phew! Because we implemented data protection alongside ArgoCD, we will not only have our desired data in our database, but also peace of mind that we have a way of recovering if this accident happens again. 
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture11.png)
 
