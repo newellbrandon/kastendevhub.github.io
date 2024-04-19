@@ -180,7 +180,7 @@ git push
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture8.png)
 
-When deploying the app with Argo Cd we can see that a second restore point has been created
+When deploying the app with ArgoCD, we can see that a second restore point has been created automatically.
 
 ## Failure Scenario
 
