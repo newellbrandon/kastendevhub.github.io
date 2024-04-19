@@ -27,7 +27,7 @@ I may also refer to GitOps in this post as CI/CD, as it can be considered a pred
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture1.png)
 
-In looking at the diagram above if you are consuming off the shelf software within your environments, as software companies are speeding up delivery of software where v1 to v2 is now weeks vs a year or even longer, then GitOps is going to help you stay in control of these updates and provide you a good way to keep track but also provide a rollback workflow when bad things happen. Now if you only have one off the shelf software in your environment maybe this is a stretch but if you have lots of COTS (Commercial off the shelf software) then a GitOps way is going to help with that control. 
+As software companies are speeding up the delivery of their software, where major releases can now occur within weeks rather than years, then GitOps is going to help you stay in control of these updates and provide you with a good way to keep track of those updates, but also provide a rollback workflow when bad things happen. Now if you only have one off-the-shelf software in your environment, maybe this is a stretch, but if you have lots of COTS (Commercial off-the-shelf software) then a GitOps approach is going to significantly help with management and control. 
 
 ## Introducing ArgoCD 
 
