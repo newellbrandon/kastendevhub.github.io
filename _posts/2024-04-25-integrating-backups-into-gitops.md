@@ -184,7 +184,7 @@ When deploying the app with ArgoCD, we can see that a second restore point has b
 
 ## Failure Scenario
 
-At this stage of our application we want to remove all the rows that have species in the list, for that we use a job that connects to the database and that deletes the rows. 
+At this stage of our walkthrough demo, we want to remove all the rows that have species specified in the list, specified within the configmap. To do so, we use a job that connects to the database and then deletes the rows.
 
 But we made a mistake in the code and we accidentally delete other rows. 
 
