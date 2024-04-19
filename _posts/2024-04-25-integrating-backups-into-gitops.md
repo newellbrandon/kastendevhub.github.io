@@ -69,7 +69,7 @@ In the walkthrough demo below, we are going to do just that. We'll take an appli
 
 I have also ran through this just for the data service using Kanister.
 
-## Walkthrough demo 
+## Walkthrough Demo 
 
 Now we are going to play a little game, if you would like to follow along with this part of the post then you will find the steps [here](https://github.com/michaelcade/argocd-kasten)
 
