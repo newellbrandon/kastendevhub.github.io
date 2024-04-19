@@ -210,7 +210,9 @@ spec:
         - -c
         - |
           #!/bin/bash
-          # Oh no !! I forgot to the "where species in ${SPECIES}" clause in the delete command :(
+          # Oh no!! We forgot to add the "where species in ${SPECIES}" clause in the delete command :(
+          # This is why veterinarians shouldn't be running SQL!
+          # sad trumpet plays
           mysql -h mysql -p\${MYSQL_ROOT_PASSWORD} -uroot -Bse "delete from test.pets"
         env:
         - name: MYSQL_ROOT_PASSWORD
