@@ -33,7 +33,7 @@ As software companies are speeding up the delivery of their software, where majo
 
 In our example we are going to focus on ArgoCD and specifically Kubernetes as our platform to run our applications. 
 
-*Argo CD is a Kubernetes-native continuous deployment (CD) tool. Unlike external CD tools that only enable push-based deployments, Argo CD can pull updated code from Git repositories and deploy it directly to Kubernetes resources.*
+> Argo CD is a Kubernetes-native continuous deployment (CD) tool. Unlike external CD tools that only enable push-based deployments, ArgoCD can pull updated code from Git repositories and deploy it directly to Kubernetes resources.
 
 As you can see from the above description, ArgoCD is specifically built for Kubernetes and will pull updates from git based repositories but it also works with helm charts as well, which today is still the defacto package manager for Kubernetes. 
 
