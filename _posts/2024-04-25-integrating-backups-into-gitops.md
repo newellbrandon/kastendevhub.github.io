@@ -73,7 +73,7 @@ I have also ran through this just for the data service using Kanister.
 
 Now we are going to play a little game, if you would like to follow along with this part of the post then you will find the steps [here](https://github.com/michaelcade/argocd-kasten)
 
-In the example above we use minikube (In the most recent releases the addons used here are not working with volumesnapshots or csi-hostpath-driver) in order to get these addons we have to do that manually or you will have to find a functional cluster with the CSI standard being used along with volumesnapshot capabilities. 
+In the example project referenced above, we use minikube, however it's worth noting that in the most recent releases, the addons used in the project are not working with volumesnapshots or csi-hostpath-driver. In order to get these addons, we have to do so manually or you will have to find a different K8s cluster where persistent storage is provided via the CSI standard along with volumesnapshot capabilities. 
 
 The steps we will cover here will be: 
 
