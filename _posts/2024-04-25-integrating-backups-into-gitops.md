@@ -125,7 +125,7 @@ This app is deployed with Argo CD and is comprised of:
 
 This is the URL required for ArgoCD - [https://github.com/MichaelCade/argocd-kasten.git](https://github.com/MichaelCade/argocd-kasten.git)
 
-We also use a pre-sync job (with corresponding sa and rolebinding)to backup the whole application with kasten before application sync. 
+We also use a pre-sync job (with corresponding service account (sa) and rolebinding) to backup the whole application with kasten prior to application sync. 
 
 At the first sync an empty restore point should be created.
 
