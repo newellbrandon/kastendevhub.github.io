@@ -162,7 +162,7 @@ exit
 
 ## Create ConfigMap to help manipulate data
 
-We create a config map that contains the list of species that won't be eligible for sterilisation. This was decided based on the experience of this clinic, operation on this species are too expansive. We can see here a link between the configuration and the data. It's very important that configuration and data are captured together.
+Next, we'll create a kubernetes configmap that contains the list of species that won't be eligible for sterilisation. This was decided based on the experience of this clinic, operation on this species are too expensive (or dangerous). We can see here a link between the configuration and the data. It's very important that configuration  (configmap) and data (our SQL data) are captured together.
 
 ```
 cat <<EOF > forbidden-species-cm.yaml 
