@@ -47,7 +47,7 @@ Note that in the application architecture above, there is a persistent volume (P
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture3.png)
 
-Whilst our git repository is great for the Kubernetes objects, the source code has no idea about the database and the contents of the database. 
+Whilst our git repository is great for our application's Kubernetes objects, the application source code has no idea about the database and the contents of the database. 
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture4.png)
 
