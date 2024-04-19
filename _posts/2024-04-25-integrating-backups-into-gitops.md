@@ -77,7 +77,6 @@ In the example project referenced above, we use minikube, however it's worth not
 
 The steps we will cover here will be: 
 
-- A Kubernetes cluster with CSI capabilities available 
 - Deploy Kasten 
 - Deploy ArgoCD 
 - Set up Application via ArgoCD 
