@@ -43,7 +43,7 @@ For the example in this post, we are going to be using a git-based repository wi
 
 ## GitOps plus Data 
 
-For those that studied the application architecture above you will have seen there is a persistent volume... in particular this is using a MySQL database to store our mission critical data. 
+Note that in the application architecture above, there is a persistent volume (PV). This persistent volume is attached to a MySQL database, which our application is using to store its mission-critical persistent data. 
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture3.png)
 
