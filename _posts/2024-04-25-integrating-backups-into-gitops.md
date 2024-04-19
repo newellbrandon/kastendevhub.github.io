@@ -23,7 +23,7 @@ The industry definition can be found below:
 
 ## My thoughts on GitOps 
 
-I may also refer to GitOps in this post according to CI/CD as well because this can be seen as maybe the predecessor to GitOps. My take is that maybe you are not a software development house today so maybe CI "Continious Integration" is not something that crosses your mind, however CD (Continous Delivery) will absolutely be something every single customer running some sort of software should be considering deploying their software the GitOps way. 
+I may also refer to GitOps in this post as CI/CD, as it can be considered a predecessor to GitOps. My take is that perhaps you are not a software development house today so maybe CI "Continious Integration" is not something that crosses your mind, however CD (Continuous Delivery) will absolutely be something every single customer running some sort of software should be considering deploying their software the GitOps way. 
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture1.png)
 
