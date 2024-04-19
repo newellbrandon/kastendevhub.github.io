@@ -117,7 +117,7 @@ First let us confirm that we do not have a namespace called mysql as this will b
 
 We create a mysql app for sterilisation of animals in a pet clinic. 
 
-This app is deployed with Argo CD and is made of : 
+This app is deployed with Argo CD and is comprised of:
 *  A mysql deployment 
 *  A PVC 
 *  A secret 
