@@ -127,7 +127,7 @@ This is the URL required for ArgoCD - [https://github.com/MichaelCade/argocd-kas
 
 We also use a pre-sync job (with corresponding service account (sa) and rolebinding) to backup the whole application with kasten prior to application sync. 
 
-At the first sync an empty restore point should be created.
+At the first sync an empty restore point should be created because the backup action is always executed before the deployment of the app.
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture6.png)
 
