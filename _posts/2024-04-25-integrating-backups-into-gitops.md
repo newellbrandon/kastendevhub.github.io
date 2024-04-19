@@ -17,7 +17,7 @@ This post is going to uncover some of the realities that we face around companie
 
 The industry definition can be found below: 
 
-*GitOps is an operational framework based on DevOps practices, like continuous integration/continuous delivery (CI/CD) and version control, which automates infrastructure and manages software deployment.*
+> GitOps is an operational framework based on DevOps practices, like continuous integration/continuous delivery (CI/CD) and version control, which automates infrastructure and manages software deployment.
 
 [Atlassian - Is GitOps the next big thing in DevOps?](https://www.atlassian.com/git/tutorials/gitops)
 
