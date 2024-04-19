@@ -242,7 +242,7 @@ SELECT * FROM pets;
 ## The Recovery
 At this stage we could roll back using ArgoCD to our previous version, prior to Phase 4, but you will notice that this just brings back our configuration and it is not going to bring back our data! 
 
-Fortunately we can use kasten to restore the data using the restore point.
+Fortunately we can use Kasten to restore the data using the restore point.
 
 You will see from the above now when we check the database our data is gone! It was lucky that we have this presync enabled to take those backups prior to any code changes. We can now use that restore point to bring back our data. 
 
