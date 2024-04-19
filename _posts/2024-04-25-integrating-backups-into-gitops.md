@@ -317,6 +317,8 @@ Phew! Because we implemented data protection alongside ArgoCD, we will not only 
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture11.png)
 
-This post was to highlight the importance of data within our applications, remember I also mentioned that this MySQL or any other data service might also be external to the Kubernetes cluster but the same issues can apply, if you manipulate that data in this way or in any other way your version control system does not capture or have any awareness of what is in the database. 
+This post was to highlight the importance of data within our applications, remember I also mentioned that this MySQL database or any other data service might also be external to the Kubernetes cluster, but the same issues may arise. We need to ensure we protect both our application configuration AND our application data, as our version control system is "unaware" of any data stored within a database.
+
+And while this is a simple example, hopefully it helps illustrate the importance of data protection in our GitOps pipelines, to protect our applications and their data, should we experience an accidental deletion, a mistyped command, or worse still, a ransomware attack.
 
 
