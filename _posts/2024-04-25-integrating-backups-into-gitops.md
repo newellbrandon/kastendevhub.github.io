@@ -65,7 +65,7 @@ Data, and the dependencies of the stack on the data be discovered, tracked, and 
 
 It is because of this that we must also protect our application data at specific times throughout its lifecycle and the best time for this to occur is prior to upgrading our application, as well as on an ongoing basis, to accoutn for other failure scenarios. 
 
-In our walkthrough demo below we are going to do just that, we are going to take an application which has a database element to this also running alongside the application inside the Kubernetes cluster, I will add though that this same process can be done with external data services. 
+In the walkthrough demo below, we are going to do just that. We'll take an application, which has a database element running alongside the application within the Kubernetes cluster and ensure we backup and store that data programatically. It's worth noting that we can use the same approach for databases running externally such as with a managed database service like Amazon RDS or within a VM hosted on other infrastructure. In the case of external data services, we realize the benefit or protecting our application and database at the same point in time, rather than having to rely on potentially disjoint backup or data copy systems.
 
 I have also ran through this just for the data service using Kanister.
 
