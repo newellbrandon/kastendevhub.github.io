@@ -88,7 +88,7 @@ The steps we will cover here will be:
 
 Ok lets get cooking.
 
-I am going to assume at this point that you have a working Kubernetes cluster and you have been through with the Kasten primer and confirmed that your CSI is configured correctly. 
+I am going to assume at this point that you have a working Kubernetes cluster and you have validated pre-requisites using the [Kasten primer](https://docs.kasten.io/latest/install/requirements.html#pre-flight-checks) and confirmed that your storage CSI is configured correctly and supports volumesnapshot capabilities.
 
 On that cluster we are then going to deploy Kasten, again a simple helm chart deployment in your Kubernetes cluster of choice 
 
