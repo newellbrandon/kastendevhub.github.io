@@ -82,7 +82,7 @@ The steps we will cover here will be:
 - Set up Application via ArgoCD 
 - Add some data 
 - Create ConfigMap to help manipulate data
-- Failure Scenario 
+- Simulate a Failure Scenario 
 - The Recovery 
 - Righting our wrongs 
 
