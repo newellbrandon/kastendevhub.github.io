@@ -53,7 +53,7 @@ Whilst our git repository is great for our application's Kubernetes objects, the
 
 Thus, when it comes to our database and its important contents, version control systems alone will not store or protect this data.
 
-Any persistent data or volumes used by applications are not captured in version control
+And this isn't just applicable to databases - *any* persistent data or volumes used by applications are not captured in version control.
 
 Example: any stateful service, such as a relational database or NoSQL system
 
