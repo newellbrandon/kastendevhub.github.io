@@ -186,7 +186,7 @@ When deploying the app with ArgoCD, we can see that a second restore point has b
 
 At this stage of our walkthrough demo, we want to remove all the rows that have species specified in the list, specified within the configmap. To do so, we use a job that connects to the database and then deletes the rows.
 
-But we made a mistake in the code and we accidentally delete other rows. 
+Ah drats! We made a mistake in the code and we accidentally delete other rows. 
 
 Notice that we use the wave 2 `argocd.argoproj.io/sync-wave: "2"` to make sure this job is executed after the kasten job.
 
