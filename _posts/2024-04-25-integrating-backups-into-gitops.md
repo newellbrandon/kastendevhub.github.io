@@ -37,7 +37,7 @@ In our example we are going to focus on ArgoCD and specifically Kubernetes as ou
 
 As you can see from the above description, ArgoCD is specifically built for Kubernetes and will pull updates from git based repositories but it also works with helm charts as well, which today is still the defacto package manager for Kubernetes. 
 
-For the example we are going to walk through we are going to be using a git based repository with ArgoCD to get our Kubernetes based application up and running. You can see what this application looks like below. 
+For the example in this post, we are going to be using a git-based repository with ArgoCD to get our Kubernetes application up and running. You can see what this application looks like below. 
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture2.png)
 
