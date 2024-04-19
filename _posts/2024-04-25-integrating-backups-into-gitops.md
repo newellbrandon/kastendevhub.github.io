@@ -105,7 +105,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl port-forward svc/argocd-server -n argocd 9090:443
 ```
 
-Username is admin and password can be obtained with this command.
+The default username is `admin` and the password can be obtained with the following command:
 
 ``` 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
