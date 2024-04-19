@@ -51,7 +51,7 @@ Whilst our git repository is great for our application's Kubernetes objects, the
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture4.png)
 
-When it comes to that database and important data, this is not going to be captured in version control systems. 
+Thus, when it comes to our database and its important contents, version control systems alone will not store or protect this data.
 
 Any persistent data or volumes used by applications are not captured in version control
 
