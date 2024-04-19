@@ -133,7 +133,10 @@ At the first sync an empty restore point should be created because the backup ac
 
 ## Add some data
 
-Vets are creating the row of the animal they will operate. 
+Now let's populate our database with some data.  Because our application is used to track the sterilisation of animals (\*remember to spay and neuter your pets, kids!), veterinarians (with a bit of knowlege of SQL) create the row of the animal they will operate.
+
+{: .alert-info }
+It's worth noting that we could build a simple web front end for this, as we wouldn't expect our veterinarians to know SQL, or Kubernetes, but this example is just for illustration purposes.
 
 ```
 mysql_pod=$(kubectl get po -n mysql -l app=mysql -o jsonpath='{.items[*].metadata.name}')
