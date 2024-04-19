@@ -63,7 +63,7 @@ Data, and the dependencies of the stack on the data be discovered, tracked, and 
 
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture5.png)
 
-It is because of this that we have to somehow also protect that data at specific times throughout the lifecycle of the apps, the best time for this happening is going to be between versions as well as maybe a more scheduled approach to combat other failure sceanrios. 
+It is because of this that we must also protect our application data at specific times throughout its lifecycle and the best time for this to occur is prior to upgrading our application, as well as on an ongoing basis, to accoutn for other failure scenarios. 
 
 In our walkthrough demo below we are going to do just that, we are going to take an application which has a database element to this also running alongside the application inside the Kubernetes cluster, I will add though that this same process can be done with external data services. 
 
