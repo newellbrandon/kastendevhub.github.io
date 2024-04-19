@@ -95,7 +95,10 @@ On that cluster we are then going to deploy Kasten using a simple helm chart dep
 [Kasten install steps](https://docs.kasten.io/latest/install/index.html)
 
 ## Deploy ArgoCD
+We will create a namespace for ArgoCD, deploy it, and set up a port-forward so we can access our ArgoCD instance.
 
+{: .alert-info }
+In production, you'd likely want to use an ingress or LoadBalancer of some kind, but for our purposes, a port forward will suffice.
 ```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
