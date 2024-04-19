@@ -240,7 +240,7 @@ SELECT * FROM pets;
 ![](/images/posts/2024-04-25-integrating-backups-into-gitops/Picture9.png)
 
 ## The Recovery
-At this stage we could roll back our ArgoCD to our previous version, prior to Phase 4 but you will notice that this just brings back our configuration and it is not going to bring back our data! 
+At this stage we could roll back using ArgoCD to our previous version, prior to Phase 4, but you will notice that this just brings back our configuration and it is not going to bring back our data! 
 
 Fortunately we can use kasten to restore the data using the restore point.
 
