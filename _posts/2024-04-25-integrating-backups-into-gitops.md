@@ -86,7 +86,7 @@ The steps we will cover here will be:
 - The Recovery 
 - Righting our wrongs 
 
-Ok lets get cooking.. 
+Ok lets get cooking.
 
 I am going to assume at this point that you have a working Kubernetes cluster and you have been through with the Kasten primer and confirmed that your CSI is configured correctly. 
 
