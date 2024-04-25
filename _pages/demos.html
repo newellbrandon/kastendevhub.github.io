@@ -4,15 +4,14 @@ title: Demos
 permalink: /demos/
 ---
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tag_words = 'demo' %}
+{% assign tag_words = site_tags | split:',' | sort %}
 
 <!-- begin tags -->
 <section class="tags">
 
-  {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-  {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+  {% assign this_word = 'demo' %}
 
-  <div class="tags__inner is-hidden" id="{{ this_word | cgi_escape }}">
+  <div class="tags__inner" id="{{ this_word | cgi_escape }}">
 
     <div class="container">
       <div class="row">
@@ -25,9 +24,10 @@ permalink: /demos/
               </div>
               {% endif %}
             {% endfor %}
-            <h2 class="tag__name">{{ this_word }}</h2>
+            <h2 class="tag__name">Veeam Kasten Demos</h2>
+            <p>
             Welcome to our interactive demo catalog! Choose an option below to get started and learn how Kasten works and works with partner solutions.
-            <div class="tag__counter">{{ site.tags[this_word].size }} {% if site.tags[page.tag].size < 2 %}Post{% else %}Posts{% endif %}</div>
+            </p>
             </div>
           </div>
         </div>
@@ -45,16 +45,6 @@ permalink: /demos/
 
     </div>
 
-    {% endunless %}
-    {% endfor %}
 
 </section>
 <!-- end tags -->
-
-<script>
-  var tag_name = window.location.search.replace("?tag=", "#");
-  if (tag_name) {
-    var el = document.querySelector(tag_name);
-    el.classList.remove("is-hidden");
-  }
-</script>
