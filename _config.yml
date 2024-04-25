@@ -57,6 +57,11 @@ defaults:
       type: "authors"
     values:
       layout: "author"
+  - scope:
+      path: ""
+      type: "demos"
+    values:
+      layout: "page"
   
 
 sass:
