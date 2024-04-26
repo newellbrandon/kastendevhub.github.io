@@ -1,10 +1,10 @@
 ---
 author: michaelcade
 date: 2024-04-25 16:21:37 +0100
-description: ""
+description: "GitOps is awesome. But it doesn't negate the need for backups. In this post, we explore the why and how we need backups in conjunction with our CD tools and pipeline"
 featured: false
 image: "/images/posts/2024-04-25-integrating-backups-into-gitops/gitops_header.webp"
-image_caption: "GitOps is awesome. But it doesn't negate the need for backups. In this post, we explore the why and how we need backups in conjunction with our CD tools and pipeline"
+image_caption: "GitOps Gears"
 layout: post
 published: true
 tags: [kasten, gitops, cicd, argocd, pipelines]
