@@ -2,7 +2,7 @@
 author: mattslotten
 date: 2024-05-15 08:21:37 +0100
 description: "Back to Basics: Business Continuity and Disaster Recovery (BCDR) Planning - Cloud Native Edition"
-featured: true
+featured: false
 image: "/images/posts/2024-05-15-cloud-native-dr/cndr_header.png"
 image_caption: "Don't Cry Over Spilled Milk When It Comes to Cloud Native BCDR"
 layout: post
