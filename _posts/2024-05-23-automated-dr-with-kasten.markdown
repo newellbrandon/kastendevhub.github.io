@@ -1,19 +1,32 @@
 ---
 layout: post
 title: The secret of short RTO is automated DR 
-description: When disaster strikes no need to say that panic also and any restore operation becomes stressful and error prone. Being able to automate entirely your restore operation is the key. Not only it speeds up your action and allow parrallelisation it also give you a real measure of your RTO.
-date: 2024-05-30 13:48:00 +0000
+description: When disaster strikes no need to say that panic also and any restore operation becomes stressful and error prone. Being able to automate entirely your restore operation is the key. Not only it speeds up your action and allow parrallelisation it also gives you a real measure of your RTO.
+date: 2024-05-23 13:48:00 +0000
 author: michaelcourcy
 image: '/images/posts/2024-05-23-automated-dr-with-kasten/automated-dr.jpg'
 image_caption: 'Automate your DR completly'
 tags: [Disaster recovery, Automation, Kasten, RTO]
 featured:
 ---
+# What is disater recovery at Kasten 
+
+At kasten we have a very opiniated view of what should be disaster recovery. We are very different from the classical
+backup tool because we protect application not infrastructure.
+
+Protecting infrastructure (for instance doing a backup of VM) in a cloud native world does not make sense any more when infrastructure as code is becoming the "de facto". But you still need to protect your buisness data and your buisness metadata.
+
+So disaster recovery comes in 2 flavors at Kasten: 
+- You rebuild a new cluster, you reinstall Kasten and you restore the apps : known as the rebuild strategy.
+- You continuously restore the apps in a standby cluster : known as the replicate strategy.
+
+In this post we are going to focus on the first one : the rebuild strategy.
+
 # Automate the complete restoration of your cluster
 
 In this example we'll demonstrate an automatic revovery from a disaster. Disaster will emulate this scenario : 
 - All applications removed
-- Kasten removed 
+- Kasten removed, kasten-io namespace deleted 
 
 And the  script `dr.sh` will :
 - Reinstall Kasten 
@@ -22,7 +35,6 @@ And the  script `dr.sh` will :
 
 This is only possible because Kasten is fully API oriented and designed with automation as a first preoccupation. 
 Being able to completly automate the restoration of all the namespaces in any new cluster has a strong impact on your RTO. 
-This example will show how much serenity you can obtain when you can so easily test disaster recovery. 
 
 # Prerequisite 
 
@@ -30,14 +42,14 @@ This example will show how much serenity you can obtain when you can so easily t
 
 We need a kubernetes cluster with Kasten installed and a location profile.
 
-Follow for instance this [tutorial](./2024-05-17-kasten-on-eks-1).
+Follow for instance this [tutorial](./kasten-on-eks-1).
 
 
 ## Create multiple applications  
 
 ### Pacman 
 
-If you already followed the [previous tutorial](./2024-05-17-kasten-on-eks-1) Pacman
+If you followed the [previous tutorial](./2024-05-17-kasten-on-eks-1) Pacman
 is already installed, otherwise follow these steps.
 
 Create the application and play one or two games to create some data in the mongodb. 
@@ -118,7 +130,9 @@ Create an hourly policy (backup + export) for postgres and run it once
 
 # Prepare for disastser recovery 
 
-Activate disaster recovery in `Settings > Disatster recovery`, and run once the policy `k10-disaster-recovery-policy`.
+Activate disaster recovery in `Settings > Disaster recovery`, and run once the policy `k10-disaster-recovery-policy`.
+
+We run it once because we need at least one backup of the Kasten catalog, but by default this policy run hourly. 
 
 ## Save the kasten values in a file
 
@@ -220,6 +234,7 @@ exit
 
 # Conclusion 
 
-This example show how a such complex operation or restoring all the apps in a cluster become so easy with Kasten.
+This example show how a such complex operation of restoring kasten and all the apps in a cluster become so easy 
+when you can automate everything.
 Testing you disaster recovery procedure is very important and automation of thoses operations should be 
 your first preoccupation. Working with a tool like Kasten that regards API as first class citizen is the key to success.
