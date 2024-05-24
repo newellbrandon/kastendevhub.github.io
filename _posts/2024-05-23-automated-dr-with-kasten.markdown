@@ -49,7 +49,7 @@ Follow for instance this [tutorial](./kasten-on-eks-1).
 
 ### Pacman 
 
-If you followed the [previous tutorial](./2024-05-17-kasten-on-eks-1) Pacman
+If you followed the [previous tutorial](./kasten-on-eks-1) Pacman
 is already installed, otherwise follow these steps.
 
 Create the application and play one or two games to create some data in the mongodb. 
