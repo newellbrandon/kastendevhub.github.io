@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Protecting Strimzi Kafka with Kasten
-description: How to backup and restore kafka messaging data & config
-date: 2024-02-11 14:00:00 +0000
+description: How to backup and restore kafka messaging data & config using Kasten by Veeam
+date: 2024-06-03 10:48:00 +0000
 author: jamestate
 image: '/images/posts/2024-06-03-kasten-and-strimzi-kafka/kafka.png'
 image_caption: 'How to protect kafka with kasten'
@@ -144,7 +144,7 @@ kubectl get kafkatopic -n kafka-1
 
 ```
 
-![kafkatopics](//images/posts/2024-06-03-kasten-and-strimzi-kafka/2.png)
+![kafkatopics](/images/posts/2024-06-03-kasten-and-strimzi-kafka/2.png)
 
 Lastly lets spin up a client pod within the kafka-1 namespace, console to it and inject some data into our topic:
 
@@ -191,9 +191,15 @@ test
 
 ## Backup & Restore with Kasten
 
-Now that we have a working cluster we can protect it with Kasten. I'm going to assume you already have a working Kasten config, with export location and any required integrations. If not that is covered in other blog posts and the Kasten docs site.
+Now that we have a working cluster we can protect it with Kasten. I'm going to assume you already have a working Kasten config, with export location and any required integrations. If not that is covered in other blog posts and the Kasten docs site. For instance you 
+can check a end to end tutorial on EKS [here](./kasten-on-eks-1).
 
-Backup of Kafka is done using the normal snapshot methodology, so a straight forward snapshot and export to an external location.  Nothing special is required. Once you have the backup restore point available we can move onto the restore. There is one thing that is important to note about the restore, it must be back to the original location as the operator make reference to it in the Kafka definition, you cannot just clone it alongside it's original to test the restore...this won't work (and you will get error messages about lack of access to secrets etc). What must be done is delete the entire namespace before attempting a restore. Of course in a DR situation, this is a moot point. We must only do this as we are testing the restore on the same Kubernetes cluster as the original install.
+Backup of Kafka is done using the normal snapshot methodology, so a straight forward snapshot and export to an external location.  Nothing special is required. Once you have the backup restore point available we can move onto the restore. 
+
+There is one thing that is important to note about the restore, it must be back to the original namespace name, it could be in another kubernetes cluster as long as you preserve the namespace name. But you cannot restore in another namespace name... this won't work (and you will get error messages about lack of access to secrets etc), because the zookeepers and the brokers instance persist urls that include the namespace name where you deployed your kafka cluster originally. 
+
+**If you restore in another namespace name you may mess up the original and the clone kafka cluster**. What must be done is delete the entire namespace before attempting a restore. Of course in a production situation, this is a moot point. If you want to test it 
+restore in another cluster. As we are on a test cluster and not in production there is no issue for us and we can delete the original namespace.
 
 Before we delete the namespace it's good practice to delete the topic first, otherwise it can be left as a hanging resource:
 
@@ -223,7 +229,7 @@ Lastly we need to selectively choose the items we restore. We cannot restore all
 
 Once the restore is completed, the Strimzi operator will again see the kafka configuration and start the deployment process, this time binding to the restored PVC's instead of creating new ones. We will yet again see the spin up of all the pods:
 
-![restored pods]/images/posts/2024-06-03-kasten-and-strimzi-kafka/1.png)
+![restored pods](/images/posts/2024-06-03-kasten-and-strimzi-kafka/1.png)
 
 Using the method above already described you can deploy the client pod and dump the contents of the topic and confirm the data is restored. Of course you can also include the client pod as part of the restore process which will remove then need for you to deploy it again.
 
