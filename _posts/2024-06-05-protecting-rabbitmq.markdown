@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Protecting RabbitMQ
-description: Can we protect the other major messaging application with Kasten too?
+title: Protecting RabbitMQ with Kasten
+description: We saw recently how to protect Kafka but can we protect the other major messaging application with Kasten too?
 date: 2024-06-05 14:00:00 +0000
 author: jamestate
 image: '/images/posts/2024-06-05-protecting-rabbitmq/rabbitmq.png'
@@ -10,7 +10,7 @@ tags: [rabbitmq, kasten, messaging]
 featured: false
 ---
 
-I recently wrote an [article](https://veeamkasten.dev/kasten-and-strimzi-kafka) covering off how we handle the backup & restore of Kafka via the Strimzi operator. A colleague of mine mentioned the other popular messaging application, RabbitMQ, and wondered if it would work in the same fashion, so I decided to spin up an MQ cluster and investigate.
+I recently wrote an [article](./kasten-and-strimzi-kafka) covering off how we handle the backup & restore of Kafka via the Strimzi operator. A colleague of mine mentioned the other popular messaging application, RabbitMQ, and wondered if it would work in the same fashion, so I decided to spin up an MQ cluster and investigate.
 
 ## Deploying the RabbitMQ operator
 
