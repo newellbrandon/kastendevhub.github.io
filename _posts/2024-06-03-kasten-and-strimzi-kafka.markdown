@@ -16,7 +16,7 @@ Kafka is a very popular platform for data flow and pipelining within the enterpr
 
 Whilst most of the data is transient, being governed by a timeout removal schedule, the issue is there is no formal backup procedure for Kafka. In fact even Confluence, Kafka's vendor, does not provide a tool for native backup. This doesn't mean it's not important to protect the data. The 'normal' procedure would be to protect the data upstream and downstream from the messaging queue, usually in other applications, but not the data in transmission. However there maybe scenarios where recovery of this transient data is required, and as long as recovery is done before the data expiry time window closes, that data can be recovered. 
 
-From a Kasten perspective it's just another classical Kubernetes application, however the Kafka architecture does require some finesse in restoration. Firstly it's important to understand what Kafka is and the components.  
+From a Kasten perspective it's just another classical Kubernetes application, however the Kafka architecture does require some finesse in restoration. First it's important to understand what Kafka is and the components.  
 
 
 ***
@@ -26,7 +26,7 @@ From a Kasten perspective it's just another classical Kubernetes application, ho
 [Strimzi](https://strimzi.io/) is a popular operator in the Kubernetes space, that streamlines and simplifies the deployment of Kafka clusters. It's fairly simple in it's operating model and provides a useful management of Kafka clusters at scale:
 
 *  The operator is installed via HELM in it's own namespace and is configured to watch ALL namespaces for Kafka configurations (via a CRD).
-*  When the operator finds a namespace with a Kafka configuration, it will deploy that configuration into the end namespace and manage the spinning up of pods, creation of PVCs and creation of all services.
+*  When the operator finds a namespace with a Kafka configuration, it deploys the configuration into the namespace and manage the lifecycle of pods, and creation of PVCs and services.
 
 As such it's actually very easy to build and deploy multiple Kafka clusters in a very quick fashion. In the below example we will deploy a simple Strimzi Kafka cluster, populate some sample data and backup/restore it.
 
@@ -36,7 +36,7 @@ As such it's actually very easy to build and deploy multiple Kafka clusters in a
 
 ## Deploying Strimzi & Creating a Kafka Cluster
 
-Assuming we have a working cluster with a default storageclass, HELM installed and kubectrl access to the cluster we can go ahead and install the Strimzi operator:
+Assuming we have a working cluster with a default storageClass, HELM installed and kubectrl access to the cluster, let's install the Strimzi operator:
 
 ```
 helm upgrade --install --create-namespace -n strimzi-operator strimzi-cluster-operator oci://quay.io/strimzi-helm/strimzi-kafka-operator --set watchAnyNamespace=true
