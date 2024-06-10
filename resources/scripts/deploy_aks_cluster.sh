@@ -18,7 +18,13 @@ echo "Ingress DNS name: $ingressDNS"
 echo "#########################################"
 read -e -p "Ready to deploy? " choice
 
-[[ "$choice" == [Yy]* ]] && printf "\r\n## Strap in, here we go! ##\r\n" || printf "\r\n## Mission Aborted ##\r\n"; exit
+#[[ "$choice" == [Yy]* ]] && printf "\r\n## Strap in, here we go! ##\r\n" || printf "\r\n## Mission Aborted ##\r\n" && exit
+
+if [[ ! $choice =~ ^[Yy]$ ]]
+then
+    echo "### Mission Aborted ###"
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
+fi
 
 #defaults
 ingressNS='ingress-nginx'
@@ -35,7 +41,7 @@ wait
 echo "AZ Group $rgName created in $location. Creating AKS cluster with Azure Container Storage. This may take some time"
 
 #Create cluster
-nohup az aks create -n $clusterName -g $rgName --node-vm-size Standard_D4s_v5 --node-count 3 --enable-azure-container-storage azureDisk
+nohup az aks create -n $clusterName -g $rgName --node-vm-size Standard_D4s_v5 --node-count 3 --enable-azure-container-storage azureDisk --os-sku AzureLinux
 
 wait
 
