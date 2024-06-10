@@ -58,6 +58,12 @@ wget https://veeamkasten.dev/resources/scripts/deploy_aks_cluster.sh
 chmod +x ./deploy_aks_cluster.sh
 ```
 
+Alternatively, if you just want to the az aks command to deploy the cluster:
+
+```
+az aks create -n <clusterName> -g <resourceGroupName> --node-vm-size Standard_D4s_v5 --node-count 3 --enable-azure-container-storage azureDisk --os-sku AzureLinux
+```
+
 # In Summary
 Kasten works great on Azure Kubernetes Service, or Azure Red Hat OpenShift (ARO) for that matter, and can leverage the full capabilities of AKS, including Azure Linux Container Host, Azure Container Storage (ACS), Azure Blob with Immutability for secured backup (also a v7 capability), and Azure Sentinel for Security information and event management (SIEM) (yet ANOTHER v7 capability!).
 
