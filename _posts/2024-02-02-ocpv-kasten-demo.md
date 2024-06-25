@@ -1,14 +1,14 @@
 ---
 author: mattslotten
 date: 2024-02-02 10:36:24 -0500
-description: "Protecting OpenShift Virtualizaton VMs with Veeam Kasten"
+description: "Protecting OpenShift Virtualization VMs with Veeam Kasten"
 featured: false
 image: "/images/posts/2024-02-02-ocpv-kasten-demo/ocpv-kasten-demo.png"
 image_caption: "OpenShift Virtualization and Veeam Kasten Interactive Demo"
 layout: post
 published: true
 tags: [demo, redhat, openshift, vm, ocp-v]
-title: "Protecting OpenShift Virtualizaton VMs with Veeam Kasten"
+title: "Protecting OpenShift Virtualization VMs with Veeam Kasten"
 ---
 Veeam Kasten can protect Kubernetes applications _and_ virtual machines deployed within OpenShift Virtualization.
 
