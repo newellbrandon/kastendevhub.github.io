@@ -47,6 +47,8 @@ Note the option to watch ANY namespace. This can also be specifically set to wat
 Next we want to define the Kafka cluster variables:
 
 ```
+kubectl create ns kafka-1
+cat<<EOF | kubectl create -n kafka-1 -f -
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
@@ -87,18 +89,15 @@ spec:
   entityOperator:
     topicOperator: {}
     userOperator: {}
+EOF
 ```
 
 We can define the number of replicas and the size of the PVC volumes depending upon our requirements. We can then create the Kafka application namespace and deploy the Kafka config. The Strimzi operator will pick this up and start the deployment automatically, creating all application resources required.
 
-```
-kubectl create ns kafka-1
-kubectl create -f kafka.yaml -n kafka-1
-```
-
 After a few minutes, check the state of your cluster:
 
 ```
+kubectl get po -n kafka-1 -w 
 kubectl get kafka -n kafka-1
 ```
 
@@ -121,6 +120,7 @@ You should also see a number of pods spun up within the **Kafka-1** namespace:
 Next we can create an example Kafka topic, deploy a client pod and push some sample data into the cluster:
 
 ```
+cat<<EOF | kubectl create -n kafka-1 -f -
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
@@ -133,6 +133,7 @@ spec:
   config:
     retention.ms: 14400000
     segment.bytes: 1073741824
+EOF
 ```
 
 Here we can set the replicas, partition count and the retention period, then apply this to the cluster and check it's deployed:
