@@ -15,7 +15,7 @@ featured:
 ## TLDR
 
 Want a quick introduction check this excellent video from my colleague Michael Cade.
- [![Video Title](http://img.youtube.com/vi/pTmeUKD8sMo/0.jpg)](http://www.youtube.com/watch?v=pTmeUKD8sMo "EDB and Kasten partnership")
+ [![Protect your Postgres EDB database with Kasten](http://img.youtube.com/vi/pTmeUKD8sMo/0.jpg)](http://www.youtube.com/watch?v=pTmeUKD8sMo "Protect your Postgres EDB database with Kasten")
 
  Having your database in Kubernetes has several advantages :   
 - **Performance** : you colocalize the data and the application
