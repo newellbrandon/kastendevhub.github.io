@@ -2,7 +2,7 @@
 layout: post
 title: Migrating VMs from VMware vSphere to Red Hat OpenShift Interactive Demo
 description: In this interactive demo, see how quick and easy it is to leverage the Red Hat OpenShift Migration Toolkit for Virtualization Operator
-date: 2024-08-12 13:00:35 -0400
+date: 2024-08-12 00:00:35 +0300
 author: mattslotten
 image: '/images/posts/2024-08-12-ocpv-mtv/ocp_mtv.webp'
 image_caption: 'Migrate VM Workloads from VMWare vSphere to Red Hat OpenShift with MTV'
