@@ -9,6 +9,9 @@ image_caption: 'Migrate to Openshift using MTV'
 tags: [vmware, migration, openshift, mtv operator, kasten, ocp-v]
 featured: false
 ---
+{: .alert-info }
+Check out <a href="/demo-ocpv-mtv" target="_blank">this blog post</a> for an interactive demo of the Red Hat Migration Toolkit for Virtualization (MTV)
+
 
 ## Overview
 With the ongoing controversy around Broadcom's acquisition of VMware and subsequent changes to pricing and partner eco-systems, many customer are looking at their options around their virtualisation provider. Most solid alternatives consist of the same type 2 hypervisor technology, products such as Nutanix, Hyper-V and Proxmox.
