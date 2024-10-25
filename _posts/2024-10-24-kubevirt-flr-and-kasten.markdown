@@ -3,7 +3,7 @@ layout: post
 title: File Level Restore on Kubevirt with Kasten by Veeam
 description: Kasten offers first class citizen support for VM with openshift virtualisation (backup, restore, migration ...). But restoring a full disk is not 
    always what you want. Often you want to do a much more granular restore called FLR (File Level Restore). Let's see how you can do that wit Kasten and OCP-V.
-date: 2024-10-25 13:48:00 +0000
+date: 2024-10-24 00:00:35 +0300
 author: michaelcourcy
 image: '/images/posts/2024-10-25-kubevirt-flr-and-kasten/openart-image_C8OrPOrw_1729860483529_raw.jpg'
 image_caption: 'EDB and Kasten partnership'
