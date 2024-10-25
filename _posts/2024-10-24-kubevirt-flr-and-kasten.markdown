@@ -6,7 +6,7 @@ description: Kasten offers first class citizen support for VM with openshift vir
 date: 2024-10-24 00:00:35 +0300
 author: michaelcourcy
 image: '/images/posts/2024-10-25-kubevirt-flr-and-kasten/openart-image_C8OrPOrw_1729860483529_raw.jpg'
-image_caption: 'EDB and Kasten partnership'
+image_caption: 'Doing File Level Restore with Kasten and Openshift Virtualisation'
 tags: [File Level Restore, Kubevirt, Openshift virtualisation, Kasten, Kubernetes, Virtual Machine]
 featured:
 ---
@@ -126,8 +126,8 @@ You can also observe that it detect all the partitions that were created
 
 # Now you can do file level restore
 
-We need to mount the `sda4` partition, with `lsblk` you'll see the new block added to your machine vda is the
-actual mount and sda is the one you just attached.
+We need to mount the `sda4` partition, with `lsblk` you'll see the new block added to your machine: `vda` is the
+actual mount and `sda` is the one you just attached.
 ![new lsblk](../images/posts/2024-10-25-kubevirt-flr-and-kasten/new-ls-blk.png)
 
 Mount `sda4` to the `/backup` directory and do a file level restore ! 
