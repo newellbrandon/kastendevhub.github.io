@@ -14,11 +14,11 @@ featured:
 # What is File Level Restore ?
 
 When you backup Virtual Machine your backup tool takes a full backup of the disks but the tool allow you to do granular restore to pick up only files or directory 
-from your backup. This feature is called FLR for File Level Restore : 
+from your backup. This feature is called FLR for File Level Restore. 
   
 There is strong reasons to do so : 
   - **Interruption of service** : If you do a full disk restore you often have to interrupt the machine or at least the services that depends on this disk 
-  - ***Risk** : Restarting a machine is always more risky than restoring a simple file
+  - **Risk** : Restarting a machine is always more risky than restoring a simple file
   - **Economic**: Restoring a full disk is not economic in term of transfer if all you need is restoring a bunch of files
   - **Granularity** : You really want to be granular, you just want to replace a specific file but not the rest.
 
@@ -31,7 +31,7 @@ VM on kubernetes are real VM. the kubernetes worker nodes act as an hypervisor a
 
 When Kasten backup a VM on kubenetes it works with the kubevirt controller to make sure that VM consistent snapshots are taken and manage the protection and restorations of the snaphots. Kasten also handle the restart and reconfiguration of the restored VM, this operation is more complex than just copying the volumes and the machines manifests. 
 
-But what about File Level Restore ? By default Kasten will do a full restore of the VM in the same namespace or in another namespace. The Kasten team is working hard on providing a comprehensive FLR feature that will be has good as the one we have in VBR. It will take times before we have this feature but this is defenetly in our road map, all our kubevirt customers are craving for it and we're working hard on it. 
+But what about File Level Restore ? By default Kasten will do a full restore of the VM in the same namespace or in another namespace. 
 
 However I want to show in this post that with a bit more manual operation you can do FLR.
  
@@ -95,7 +95,7 @@ Wait for the snap to finish
 # Restore the application in another namespace
 
 Restore the application from the restorepoint in another namespace 
-![Snap finish](../images/posts/2024-10-25-kubevirt-flr-and-kasten/snap-finish.png)
+![Snap finish](../images/posts/2024-10-25-kubevirt-flr-and-kasten/restore-in-another-ns.png)
 
 Apply a transform to not start the machine
 ![Snap finish](../images/posts/2024-10-25-kubevirt-flr-and-kasten/stop-vm-transform.png)
