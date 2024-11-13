@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 
-description: 
+title: Veeam Kasten Red Hat OpenShift Virtualization Reference Architecture
+description: In this post, we take a look at the recently published Veeam Kasten Red Hat OpenShift Virtualization Reference Architecture
 date: 2024-11-13 09:00:35 +0300
 author: mattslotten
 image: '/images/posts/2024-11-13-redhat-ocpv-refarch/veeam-kasten-and-red-hat-openshift-virtualization-reference-architecture.png'
