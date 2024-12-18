@@ -45,7 +45,7 @@ The public address of the storage account container is the **issuer** endpoint. 
 
 ![Storage account acting like an IDP](../images/posts/2024-12-18-federated-identity/storage-account.png)
 
-But Azure only need the to find the public JKMS key (in the openid directory) that will validate the signature of the JWT. JKMS is the public key in the cryptographic signature. 
+But Azure only need public JKMS key (in the openid directory) to validate the signature of the JWT. JKMS is the public key in the cryptographic signature. 
 Openshift keep the control on the creation of the JWT and sign it with the private key.
 
 Now when you check the Azure managed identity that are used by openshift 
