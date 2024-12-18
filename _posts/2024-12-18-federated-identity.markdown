@@ -5,7 +5,7 @@ description: When Kasten need to interact with a cloud provider API as Azure we 
 date: 2024-12-18 00:00:35 +0300
 author: michaelcourcy-deepikadixit
 image: '/images/posts/2024-12-18-federated-identity/kasten-azure-openshift.jpg'
-image_caption: 'Federation in Openshift between Kasten and an Azure Managed Identity'
+image_caption: 'Identity Federation in Openshift between Kasten and Azure Entra Id'
 tags: [Azure , Backup, Kasten, Kubernetes, Security, Authentication, Federated identity]
 featured:
 ---
