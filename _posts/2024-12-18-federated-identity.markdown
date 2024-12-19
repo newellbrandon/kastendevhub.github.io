@@ -64,7 +64,7 @@ When Azure Entra Id will validate the JWT it will use this 2 informations :
 
 ## Use it for your own application
 
-But this configuration is not only used by the Openshift operators, one can create a service account that can assume a managed identity. In this [Redhat tutorial](https://access.redhat.com/solutions/7044926) a kubenetes service account  read the content of an Azure Key Vault.
+But this configuration is not only used by the Openshift operators, one can create a service account that can assume a managed identity. In this [Redhat tutorial](https://access.redhat.com/solutions/7044926) a kubernetes service account  read the content of an Azure Key Vault.
 
 We're not going to redo the tutorial but the main steps are 
 
